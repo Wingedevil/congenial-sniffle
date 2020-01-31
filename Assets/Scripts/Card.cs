@@ -20,9 +20,4 @@ public class Card : ScriptableObject
     public int RepairWoodCost;
     public int RepairSteelCost;
     public int RepairGoldCost;
-
-    protected GameManager glm;
-    Card() {
-        glm = GameObject.FindObjectOfType<GameManager>();
-    }
 }
