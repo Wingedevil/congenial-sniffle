@@ -14,7 +14,7 @@ public class DeckManager : Manager<DeckManager>
     private List<Card> deadCards = new List<Card>();
     private Queue<List<Card>> forbiddenCards = new Queue<List<Card>>();
 
-    private void Awake() {
+    public override void Awake() {
         base.Awake();
         forbiddenCards.Enqueue(new List<Card>());
         forbiddenCards.Enqueue(new List<Card>());
