@@ -6,6 +6,24 @@ public class GameLogicManager : Manager<GameLogicManager>
 {
     public Resources PlayerResources;
     public Upgrades PlayerUpgrades;
+    public List<Card> PlayerStorage;
+    public List<Card> PlayerRiver;
+
+    public void MoveRiver()
+    {
+        // Remove last card
+        if (PlayerRiver.Count > 0)
+        {
+            PlayerRiver.RemoveAt(PlayerRiver.Count - 1);
+        }
+
+        // draw from deck
+    }
+
+    public void ResetActions()
+    {
+        PlayerResources.Actions = 1 + PlayerResources.Population / 10;
+    }
 
     public void IncreaseWood(int amt)
     {

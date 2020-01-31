@@ -11,4 +11,5 @@ public struct Resources
     public int Population;
     public int RiverSize;
     public int Storage;
+    public int Actions;
 }
