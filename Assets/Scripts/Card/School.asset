@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
+  m_Name: School
+  m_EditorClassIdentifier: 
+  ID: 102
+  Tier: 0
+  Name: School
+  Image: {fileID: 0}
+  Description: 'Scrap +1 Gold (once per turn), Action: River moves 1 left'
+  OnRepair: []
+  OnAction:
+  - {fileID: 0}
+  OnEndTurn: []
+  ScrapWoodCost: 0
+  ScrapSteelCost: 0
+  ScrapGoldCost: 0
+  RepairWoodCost: 3
+  RepairSteelCost: 2
+  RepairGoldCost: 6
