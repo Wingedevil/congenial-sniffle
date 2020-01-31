@@ -9,10 +9,7 @@ public class ChangeRiverEffect : Effect {
     public bool MoveRightToLeft;
     public int MoveRiverNTimes;
     public override void ApplyEffect() {
-        // if(MoveLeftToRight) glm.MoveLeftToRight();
-        // if(MoveRightToLeft) glm.MoveRightToLeft();
-        // glm.MoveRiverNTimes(MoveRiverNTimes);
-        // ...
+        // Todo
     }
 }
 

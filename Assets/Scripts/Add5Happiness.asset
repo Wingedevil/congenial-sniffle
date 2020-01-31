@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c79a14cc2476464291242cf40d5e99e, type: 3}
+  m_Name: Add5Happiness
+  m_EditorClassIdentifier: 
+  WoodCost: 0
+  SteelCost: 0
+  GoldCost: 0
+  ActionCost: 0
+  ChangeWood: 0
+  ChangeSteel: 0
+  ChangeGold: 0
+  ChangePopulation: 0
+  ChangeHappiness: 5
+  ChangeRiverSize: 0
+  ChangeStorage: 0
