@@ -63,6 +63,8 @@ public class GameManager : Manager<GameManager>
 
     public void StartGame()
     {
+        GameLoopManager.Instance.OnGameStart();
+        UpdateState(GameState.Running);
     }
 
     public void TogglePause()
