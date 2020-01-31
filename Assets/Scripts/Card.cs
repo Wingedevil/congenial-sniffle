@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Card", order = 1)]
 public class Card : ScriptableObject
 {
+    public int ID;
+    public int Tier;
+
     public string Name;
     public Sprite Image;
 

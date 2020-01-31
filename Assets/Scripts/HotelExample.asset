@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: HotelExample
   m_EditorClassIdentifier: 
+  ID: 999
+  Tier: 0
   Name: Hotel
   Image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Description: +10 Population, +5 Happiness/turn
@@ -20,9 +22,9 @@ MonoBehaviour:
   OnAction: []
   OnEndTurn:
   - {fileID: 11400000, guid: a4813a536613bee41b52fafd868308af, type: 2}
-  ScrapWoodCost: 10
-  ScrapSteelCost: 10
-  ScrapGoldCost: 2
-  RepairWoodCost: 5
-  RepairSteelCost: 1
-  RepairGoldCost: 0
+  ScrapWoodCost: 5
+  ScrapSteelCost: 1
+  ScrapGoldCost: 0
+  RepairWoodCost: 10
+  RepairSteelCost: 10
+  RepairGoldCost: 2
