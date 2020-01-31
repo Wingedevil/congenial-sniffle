@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
+  m_Name: Hotel
+  m_EditorClassIdentifier: 
+  Name: Hotel
+  Image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Description: +10 Population, +5 Happiness/turn
+  OnRepair:
+  - {fileID: 11400000, guid: 7847aa3ec22a1bb4f929b13ca5ae2ec8, type: 2}
+  OnAction: []
+  OnEndTurn:
+  - {fileID: 11400000, guid: a8d47abf9ad57344691d6ca553c020d7, type: 2}
+  ScrapWoodCost: 10
+  ScrapSteelCost: 10
+  ScrapGoldCost: 2
+  RepairWoodCost: 5
+  RepairSteelCost: 1
+  RepairGoldCost: 0
