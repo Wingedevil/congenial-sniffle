@@ -6,7 +6,7 @@ public class GameLogicManager : Manager<GameLogicManager>
 {
     public Resources PlayerResources;
     public Upgrades PlayerUpgrades;
-    public List<Card> PlayerStorage;
+    public List<Card> PlayerAssets;
     public List<Card> PlayerRiver;
 
     public void MoveRiver()
@@ -32,7 +32,7 @@ public class GameLogicManager : Manager<GameLogicManager>
 
     public void UntapCards()
     {
-        foreach (Card card in PlayerStorage)
+        foreach (Card card in PlayerAssets)
         {
             card.IsTapped = false;
         }
