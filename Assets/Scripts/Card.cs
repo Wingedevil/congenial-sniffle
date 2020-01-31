@@ -23,4 +23,6 @@ public class Card : ScriptableObject
     public int RepairWoodCost;
     public int RepairSteelCost;
     public int RepairGoldCost;
+
+    public bool IsTapped;
 }

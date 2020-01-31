@@ -25,6 +25,19 @@ public class GameLogicManager : Manager<GameLogicManager>
         PlayerResources.Actions = 1 + PlayerResources.Population / 10;
     }
 
+    public void DiscardResources()
+    {
+        // we could display UI here or just do some automatic deduction
+    }
+
+    public void UntapCards()
+    {
+        foreach (Card card in PlayerStorage)
+        {
+            card.IsTapped = false;
+        }
+    }
+
     public void IncreaseWood(int amt)
     {
         PlayerResources.Wood += amt;
@@ -73,5 +86,20 @@ public class GameLogicManager : Manager<GameLogicManager>
     public void IncreaseGoldCostReduction(int amt)
     {
         PlayerUpgrades.GoldCostReduction += amt;
+    }
+
+    public void IncreaseWoodScrapBonus(int amt)
+    {
+        PlayerUpgrades.WoodScrapBonus += amt;
+    }
+
+    public void IncreaseSteelScrapBonus(int amt)
+    {
+        PlayerUpgrades.SteelScrapBonus += amt;
+    }
+
+    public void IncreaseGoldScrapBonus(int amt)
+    {
+        PlayerUpgrades.GoldScrapBonus += amt;
     }
 }
