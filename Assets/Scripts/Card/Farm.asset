@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 13
   Tier: 1
   Name: Farm
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 0a92cd77af9726144809c31039a73bea, type: 3}
   Description: Happiness +10/turn
   OnRepair: []
   OnAction: []

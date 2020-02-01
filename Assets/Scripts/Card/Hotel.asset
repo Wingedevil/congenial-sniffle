@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 23
   Tier: 2
   Name: Hotel
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 896ccaf927e7ab544a7d1d71ad0c9333, type: 3}
   Description: Population +6, Happiness +10/turn
   OnRepair:
   - {fileID: 11400000, guid: e6b1bbc26df38114081405c7c0f8bf58, type: 2}

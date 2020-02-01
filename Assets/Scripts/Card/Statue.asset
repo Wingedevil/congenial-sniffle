@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 2
   Tier: 0
   Name: Statue
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: fe6e023b3ed20254fb37b301f5c88cf1, type: 3}
   Description: Happiness +20 on build
   OnRepair:
   - {fileID: 11400000, guid: 3da1bab77122b214eba89b8d731eb9f4, type: 2}
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 10
   Tier: 1
   Name: Large Chests
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 3debc417cc3a1ec428a7b105ead14f39, type: 3}
   Description: Storage +1
   OnRepair:
   - {fileID: 11400000, guid: 4bacacc670d8740498dff4a777f7e777, type: 2}

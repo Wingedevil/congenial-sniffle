@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 14
   Tier: 1
   Name: Workshop
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 599fa1e39f8e3954fadb9ae24ed589e7, type: 3}
   Description: Wood Costs 1 less to Repair
   OnRepair:
   - {fileID: 11400000, guid: f109fcace38d26b4f9d2294093886327, type: 2}

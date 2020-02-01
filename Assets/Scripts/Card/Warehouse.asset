@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 20
   Tier: 2
   Name: Warehouse
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 7e7f135a646a2ac42b7c92976748d6de, type: 3}
   Description: Storage +2
   OnRepair:
   - {fileID: 11400000, guid: d871d558c1b483846b6f028d300edaaf, type: 2}

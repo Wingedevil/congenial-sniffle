@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 12
   Tier: 1
   Name: River Boat
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 23ed8ab7378b9734f83f2e6a7ed6a691, type: 3}
   Description: River moves left 1
   OnRepair: []
   OnAction:

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 9
   Tier: 0
   Name: Large Hut
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 42efef27a2a7b2d4c8cf257b60bb8b07, type: 3}
   Description: Population +6, Happiness +10 (one off)
   OnRepair:
   - {fileID: 11400000, guid: e6b1bbc26df38114081405c7c0f8bf58, type: 2}
@@ -29,3 +29,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

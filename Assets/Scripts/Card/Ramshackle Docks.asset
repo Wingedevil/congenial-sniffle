@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 5
   Tier: 0
   Name: Ramshackle Docks
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 5ba7a8e7718b93a40a7725d37d3dafd9, type: 3}
   Description: River Size +1
   OnRepair:
   - {fileID: 11400000, guid: f109fcace38d26b4f9d2294093886327, type: 2}
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 4
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

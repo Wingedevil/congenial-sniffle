@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 6
   Tier: 0
   Name: Metal Finder
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 1a279e05ea3777e4f9cc100c33159727, type: 3}
   Description: Scrap +1 Steel
   OnRepair:
   - {fileID: 11400000, guid: 0bd015e654b9cce47b7be81f3ddc80d1, type: 2}
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 6
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

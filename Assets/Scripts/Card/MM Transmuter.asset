@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 7
   Tier: 0
   Name: Minor Matter Transmuter
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 82150f7f986e9884e911ef876687774c, type: 3}
   Description: Transmute 2G to 1S
   OnRepair: []
   OnAction:

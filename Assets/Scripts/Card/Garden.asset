@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 22
   Tier: 2
   Name: Garden
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 69b9b8fe7a320694595dd884f3f9b278, type: 3}
   Description: Happiness +15/turn
   OnRepair: []
   OnAction: []

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 19
   Tier: 2
   Name: 'Matter Upgrader: Steel'
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 55eea46f97881944da9eab9022014f61, type: 3}
   Description: Transmute 3S to 1G
   OnRepair: []
   OnAction:

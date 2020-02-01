@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 0
   Tier: 0
   Name: Crate
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 2d6f14225fa3b884e8b00bf68613e54a, type: 3}
   Description: Storage +1
   OnRepair:
   - {fileID: 11400000, guid: 4bacacc670d8740498dff4a777f7e777, type: 2}
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

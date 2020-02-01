@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 21
   Tier: 2
   Name: Tow Boat
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 15558042fca8d8f4caede1c8da25c9a2, type: 3}
   Description: Move last river item to the front
   OnRepair: []
   OnAction:

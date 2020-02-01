@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 4
   Tier: 0
   Name: Communal Housing
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 5ba7a8e7718b93a40a7725d37d3dafd9, type: 3}
   Description: Population +8
   OnRepair:
   - {fileID: 11400000, guid: cb812a76d7bfe524ab4c27c6a9ec3b31, type: 2}
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

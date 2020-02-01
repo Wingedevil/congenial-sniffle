@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 3
   Tier: 0
   Name: Twig Gatherer
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: a07283299ca203645ab4b4f24e62dce4, type: 3}
   Description: Scrap +1 Wood
   OnRepair:
   - {fileID: 11400000, guid: 5987d6bf9d5ad104dbc20eaa2bb9cea2, type: 2}
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1
