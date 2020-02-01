@@ -181,9 +181,9 @@ public class GameLogicManager : Manager<GameLogicManager> {
             DeckManager.Instance.Scrapped(card);
             UIManager.Instance.DrawRiver();
             PlayerResources.Actions--;
-            PlayerResources.Wood += card.ScrapWoodCost;
-            PlayerResources.Steel += card.ScrapSteelCost;
-            PlayerResources.Gold += card.ScrapGoldCost;
+            PlayerResources.Wood += card.ScrapWoodCost == 0 ? card.ScrapWoodCost + PlayerUpgrades.WoodScrapBonus : 0;
+            PlayerResources.Steel += card.ScrapSteelCost == 0 ? card.ScrapSteelCost + PlayerUpgrades.SteelScrapBonus : 0;
+            PlayerResources.Gold += card.ScrapGoldCost == 0 ? card.ScrapGoldCost + PlayerUpgrades.GoldScrapBonus : 0;
             UIManager.Instance.UpdateResources();
 
             if (PlayerResources.Actions == 0)
