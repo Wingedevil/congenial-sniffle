@@ -5,19 +5,31 @@ using UnityEngine.Assertions;
 
 public class GameLogicManager : Manager<GameLogicManager> {
     public const float HAPPINESS_PER_POPULATION = 0.5f;
+    public const int NUMBER_OF_OBJECTIVES = 4;
 
+    public int HutsBuilt = 0;
     public Resources PlayerResources = new Resources();
     public Upgrades PlayerUpgrades;
     public List<Card> PlayerAssets;
     public List<Card> PlayerRiver = new List<Card>();
+    public List<Card> PlayerObjectives;
+
+    public void PopulateObjectives() {
+        for (int i = 0; i < NUMBER_OF_OBJECTIVES; ++i) {
+            Objective oj = DeckManager.Instance.DrawObjective();
+            if (!oj) {
+                break;
+            }
+            PlayerObjectives.Add(oj);
+        }
+    }
 
     public void MoveRiver() {
         // draw from deck
         Card drawnCard = DeckManager.Instance.Draw();
 
         // Remove last card
-        if (PlayerRiver.Count >= PlayerResources.RiverSize)
-        {
+        if (PlayerRiver.Count >= PlayerResources.RiverSize) {
             DeckManager.Instance.DownStreamed(PlayerRiver[PlayerRiver.Count - 1]);
             PlayerRiver.RemoveAt(PlayerRiver.Count - 1);
         }
@@ -26,13 +38,11 @@ public class GameLogicManager : Manager<GameLogicManager> {
         UIManager.Instance.DrawRiver();
     }
 
-    public void ResetActions()
-    {
+    public void ResetActions() {
         PlayerResources.Actions = 1 + PlayerResources.Population / 10;
     }
 
-    public void DiscardResources()
-    {
+    public void DiscardResources() {
         // we could display UI here or just do some automatic deduction
 
         // todo refine?
@@ -40,7 +50,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
         IncreaseSteel(Mathf.CeilToInt(PlayerResources.Steel / 2f));
         IncreaseGold(Mathf.CeilToInt(PlayerResources.Gold / 2f));
     }
-
+    
     public void TapCard(Card card)
     {
         if (!card.IsTapped && CanUseEffects(card.OnAction) && PlayerResources.Actions > 0)
@@ -51,28 +61,23 @@ public class GameLogicManager : Manager<GameLogicManager> {
             UIManager.Instance.UpdateResources();
         }
 
-        if (PlayerResources.Actions == 0)
-        {
+        if (PlayerResources.Actions == 0) {
             GameLoopManager.Instance.NoMoreActions();
         }
     }
 
-    public void UntapCards()
-    {
-        foreach (Card card in PlayerAssets)
-        {
+    public void UntapCards() {
+        foreach (Card card in PlayerAssets) {
             card.IsTapped = false;
         }
     }
 
-    bool CanUseEffects(Effect[] effects)
-    {
+    bool CanUseEffects(Effect[] effects) {
         int actionCost = 0;
         int woodCost = 0;
         int steelCost = 0;
         int goldCost = 0;
-        foreach (Effect effect in effects)
-        {
+        foreach (Effect effect in effects) {
             actionCost += effect.ActionCost;
             woodCost += effect.WoodCost;
             steelCost += effect.SteelCost;
@@ -85,10 +90,8 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerResources.Gold >= goldCost);
     }
 
-    void UseEffects(Effect[] effects)
-    {
-        foreach (Effect effect in effects)
-        {
+    void UseEffects(Effect[] effects) {
+        foreach (Effect effect in effects) {
             PlayerResources.Actions -= effect.ActionCost;
             PlayerResources.Wood -= effect.WoodCost;
             PlayerResources.Steel -= effect.SteelCost;
@@ -97,12 +100,9 @@ public class GameLogicManager : Manager<GameLogicManager> {
         }
     }
 
-    public void TriggerEndOfTurnEffects()
-    {
-        foreach (Card card in PlayerAssets)
-        {
-            if (CanUseEffects(card.OnEndTurn))
-            {
+    public void TriggerEndOfTurnEffects() {
+        foreach (Card card in PlayerAssets) {
+            if (CanUseEffects(card.OnEndTurn)) {
                 UseEffects(card.OnEndTurn);
             }
         }
@@ -127,14 +127,23 @@ public class GameLogicManager : Manager<GameLogicManager> {
         Debug.Log("You Lose");
     }
 
-    public void TryRepair(Card card)
-    {
-        Assert.IsTrue(PlayerRiver.Contains(card));
+    public void TryRepair(Card card) {
+        Assert.IsTrue(PlayerRiver.Contains(card) || card is Objective);
         // TODO: Ask about design for repair
         // Theres a chance we cant repair
-        if (PlayerResources.Actions > 0 && CanUseEffects(card.OnRepair))
-        {
+        if (PlayerResources.Actions > 0 && CanUseEffects(card.OnRepair) && CanRepair(card)) {
+            PlayerResources.Wood -= card.RepairWoodCost;
+            PlayerResources.Steel -= card.RepairSteelCost;
+            PlayerResources.Gold -= card.RepairGoldCost;
             UseEffects(card.OnRepair);
+
+            if (card is Objective) {
+                int index2 = PlayerObjectives.IndexOf(card);
+                PlayerObjectives[index2] = null;
+                PlayerAssets.Add(card);
+                return;
+            }
+
             int index = PlayerRiver.IndexOf(card);
             PlayerRiver[index] = null;
             PlayerAssets.Add(card);
@@ -150,7 +159,12 @@ public class GameLogicManager : Manager<GameLogicManager> {
             GameLoopManager.Instance.NoMoreActions();
         }
     }
-
+    
+    public bool CanRepair(Card card) {
+        return (PlayerResources.Wood >= card.RepairWoodCost &&
+            PlayerResources.Steel >= card.RepairSteelCost &&
+            PlayerResources.Gold >= card.RepairGoldCost);
+    }
     public bool Scrap(Card card)
     {
         // Assert.IsTrue(PlayerRiver.Contains(card));
@@ -175,68 +189,55 @@ public class GameLogicManager : Manager<GameLogicManager> {
         return false;
     }
 
-    public void IncreaseWood(int amt)
-    {
+    public void IncreaseWood(int amt) {
         PlayerResources.Wood += amt;
     }
 
-    public void IncreaseSteel(int amt)
-    {
+    public void IncreaseSteel(int amt) {
         PlayerResources.Steel += amt;
     }
 
-    public void IncreaseGold(int amt)
-    {
+    public void IncreaseGold(int amt) {
         PlayerResources.Gold += amt;
     }
 
-    public void IncreaseHappiness(int amt)
-    {
+    public void IncreaseHappiness(int amt) {
         PlayerResources.Happiness += amt;
     }
 
-    public void IncreasePopulation(int amt)
-    {
+    public void IncreasePopulation(int amt) {
         PlayerResources.Population += amt;
     }
 
-    public void IncreaseRiverSize(int amt)
-    {
+    public void IncreaseRiverSize(int amt) {
         PlayerResources.RiverSize += amt;
     }
 
-    public void IncreaseStorage(int amt)
-    {
+    public void IncreaseStorage(int amt) {
         PlayerResources.Storage += amt;
     }
 
-    public void IncreaseWoodCostReduction(int amt)
-    {
+    public void IncreaseWoodCostReduction(int amt) {
         PlayerUpgrades.WoodCostReduction += amt;
     }
 
-    public void IncreaseSteelCostReduction(int amt)
-    {
+    public void IncreaseSteelCostReduction(int amt) {
         PlayerUpgrades.SteelCostReduction += amt;
     }
 
-    public void IncreaseGoldCostReduction(int amt)
-    {
+    public void IncreaseGoldCostReduction(int amt) {
         PlayerUpgrades.GoldCostReduction += amt;
     }
 
-    public void IncreaseWoodScrapBonus(int amt)
-    {
+    public void IncreaseWoodScrapBonus(int amt) {
         PlayerUpgrades.WoodScrapBonus += amt;
     }
 
-    public void IncreaseSteelScrapBonus(int amt)
-    {
+    public void IncreaseSteelScrapBonus(int amt) {
         PlayerUpgrades.SteelScrapBonus += amt;
     }
 
-    public void IncreaseGoldScrapBonus(int amt)
-    {
+    public void IncreaseGoldScrapBonus(int amt) {
         PlayerUpgrades.GoldScrapBonus += amt;
     }
 }

@@ -28,4 +28,8 @@ public class Card : ScriptableObject
 
     [HideInInspector]
     public bool Scrappable = true;
+
+    public virtual void NotUnityUpdate() {
+
+    }
 }

@@ -22,6 +22,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler
     }
     public void UpdateCardData()
     {
+        CardData.NotUnityUpdate();
         CardImage.sprite = CardData.Image == null ? DefaultSprite : CardData.Image;
         Name.text = CardData.Name;
         Description.text = CardData.Description;
