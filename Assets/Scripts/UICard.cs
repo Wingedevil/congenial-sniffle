@@ -29,7 +29,10 @@ public class UICard : MonoBehaviour, IPointerClickHandler
         Name.text = CardData.Name;
         Description.text = CardData.Description;
         RepairCost.text = string.Format("W {0}\nS {1}\nG {2}", CardData.RepairWoodCost, CardData.RepairSteelCost, CardData.RepairGoldCost);
-        ScrapCost.text = string.Format("W {0}\nS {1}\nG {2}", CardData.ScrapWoodCost, CardData.ScrapSteelCost, CardData.ScrapGoldCost);
+        if (CardData.Scrappable)
+        {
+            ScrapCost.text = string.Format("W {0}\nS {1}\nG {2}", CardData.ScrapWoodCost, CardData.ScrapSteelCost, CardData.ScrapGoldCost);
+        }
     }
 
     public void OnPointerClick(PointerEventData data)
@@ -43,7 +46,10 @@ public class UICard : MonoBehaviour, IPointerClickHandler
             }
             else
             {
-                GameLogicManager.Instance.Scrap(CardData);
+                if (CardData.Scrappable)
+                {
+                    GameLogicManager.Instance.Scrap(CardData);
+                }
             }
         }
         else if (!CardData.IsTapped && CardData.OnAction.Length > 0)

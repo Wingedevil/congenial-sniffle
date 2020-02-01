@@ -18,6 +18,8 @@ public class UIManager : Manager<UIManager>
         REPAIR,
         SCRAP
     }
+
+    public bool IsRiverShown = true;
     public ClickType CurrentClickType = ClickType.REPAIR;
     public void DrawRiver()
     {
@@ -28,7 +30,8 @@ public class UIManager : Manager<UIManager>
         RiverObjects.Clear();
 
         int i = 0;
-        foreach (Card card in GameLogicManager.Instance.PlayerRiver)
+        List<Card> cardsInBottomRow = IsRiverShown ? GameLogicManager.Instance.PlayerRiver : GameLogicManager.Instance.PlayerObjectives;
+        foreach (Card card in cardsInBottomRow)
         {
             if (card == null)
             {
@@ -73,7 +76,7 @@ public class UIManager : Manager<UIManager>
     public void UpdateResources()
     {
         Resources resources = GameLogicManager.Instance.PlayerResources;
-        ResourcesText.text = string.Format("W: {0}, S: {1}, G: {2}, Actions: {3}, River Size: {4}, Pop: {5}, Happy: {8} Turn: {6}, Click: {7}",
+        ResourcesText.text = string.Format("W: {0}, S: {1}, G: {2}, Actions: {3}, River Size: {4}, Pop: {5}, Happy: {8} Turn: {6}, Click: {7}, Bottom Row: {9}",
             resources.Wood,
             resources.Steel,
             resources.Gold,
@@ -82,7 +85,8 @@ public class UIManager : Manager<UIManager>
             resources.Population,
             GameLoopManager.Instance.Turn,
             UIManager.Instance.CurrentClickType,
-            resources.Happiness
+            resources.Happiness,
+            IsRiverShown ? "River" : "Objectives"
         );
     }
 
@@ -106,5 +110,13 @@ public class UIManager : Manager<UIManager>
             Debug.Log(CurrentClickType);
             UpdateResources();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            IsRiverShown = !IsRiverShown;
+            DrawRiver();
+            UpdateResources();
+        }
+
     }
 }
