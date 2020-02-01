@@ -10,22 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
-  m_Name: Smelter
+  m_Name: JunkWood
   m_EditorClassIdentifier: 
-  ID: 17
-  Tier: 2
-  Name: Smelter
+  ID: 998
+  Tier: 0
+  Name: Junk Wood
   Image: {fileID: 0}
-  Description: Scrap +1 Steel
-  OnRepair:
-  - {fileID: 11400000, guid: 0bd015e654b9cce47b7be81f3ddc80d1, type: 2}
+  Description: It's just junk
+  OnRepair: []
   OnAction: []
   OnEndTurn: []
-  ScrapWoodCost: 0
-  ScrapSteelCost: 1
-  ScrapGoldCost: 1
-  RepairWoodCost: 2
-  RepairSteelCost: 5
-  RepairGoldCost: 3
+  ScrapWoodCost: 1
+  ScrapSteelCost: 0
+  ScrapGoldCost: 0
+  RepairWoodCost: 999
+  RepairSteelCost: 999
+  RepairGoldCost: 999
   IsTapped: 0
   Scrappable: 1

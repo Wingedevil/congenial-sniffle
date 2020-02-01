@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Farm
   m_EditorClassIdentifier: 
   ID: 13
-  Tier: 0
+  Tier: 1
   Name: Farm
   Image: {fileID: 0}
   Description: Happiness +10/turn
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 3
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

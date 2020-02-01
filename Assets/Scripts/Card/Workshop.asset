@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Workshop
   m_EditorClassIdentifier: 
   ID: 14
-  Tier: 0
+  Tier: 1
   Name: Workshop
   Image: {fileID: 0}
   Description: Wood Costs 1 less to Repair
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 2
   IsTapped: 0
+  Scrappable: 1

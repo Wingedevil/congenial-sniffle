@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Metal Statue
   m_EditorClassIdentifier: 
   ID: 11
-  Tier: 0
+  Tier: 1
   Name: Metal Statue
   Image: {fileID: 0}
   Description: Happiness +20 (one off)
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 4
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

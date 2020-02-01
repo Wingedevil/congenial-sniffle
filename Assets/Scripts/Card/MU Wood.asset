@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: MU Wood
   m_EditorClassIdentifier: 
-  ID: 0
-  Tier: 0
+  ID: 18
+  Tier: 2
   Name: 'Matter Upgrader: Wood'
   Image: {fileID: 0}
   Description: Transmute 3W to 1S
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 3
   RepairGoldCost: 5
   IsTapped: 0
+  Scrappable: 1

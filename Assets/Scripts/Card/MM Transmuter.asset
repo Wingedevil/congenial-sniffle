@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: MM Transmuter
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 7
   Tier: 0
   Name: Minor Matter Transmuter
   Image: {fileID: 0}
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 4
   IsTapped: 0
+  Scrappable: 1

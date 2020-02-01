@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Garden
   m_EditorClassIdentifier: 
   ID: 22
-  Tier: 0
+  Tier: 2
   Name: Garden
   Image: {fileID: 0}
   Description: Happiness +15/turn
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 3
   RepairGoldCost: 3
   IsTapped: 0
+  Scrappable: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MU Steel
   m_EditorClassIdentifier: 
   ID: 19
-  Tier: 0
+  Tier: 2
   Name: 'Matter Upgrader: Steel'
   Image: {fileID: 0}
   Description: Transmute 3S to 1G
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 5
   RepairGoldCost: 4
   IsTapped: 0
+  Scrappable: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Warehouse
   m_EditorClassIdentifier: 
   ID: 20
-  Tier: 0
+  Tier: 2
   Name: Warehouse
   Image: {fileID: 0}
   Description: Storage +2
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 3
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

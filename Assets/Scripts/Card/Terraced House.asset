@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Terraced House
   m_EditorClassIdentifier: 
   ID: 15
-  Tier: 0
+  Tier: 1
   Name: Terraced House
   Image: {fileID: 0}
   Description: Population +5, Happiness +5/turn
@@ -29,3 +29,4 @@ MonoBehaviour:
   RepairSteelCost: 3
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

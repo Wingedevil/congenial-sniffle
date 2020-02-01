@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Large Chests
   m_EditorClassIdentifier: 
   ID: 10
-  Tier: 0
+  Tier: 1
   Name: Large Chests
   Image: {fileID: 0}
   Description: Storage +1
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 1

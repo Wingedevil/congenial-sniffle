@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Welder
   m_EditorClassIdentifier: 
   ID: 25
-  Tier: 0
+  Tier: 2
   Name: Welder
   Image: {fileID: 0}
   Description: Steel Costs 1 less to repair
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 7
   RepairGoldCost: 3
   IsTapped: 0
+  Scrappable: 1

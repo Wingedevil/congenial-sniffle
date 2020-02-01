@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: River Boat
   m_EditorClassIdentifier: 
   ID: 12
-  Tier: 0
+  Tier: 1
   Name: River Boat
   Image: {fileID: 0}
   Description: River moves left 1
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 0
   RepairGoldCost: 3
   IsTapped: 0
+  Scrappable: 1

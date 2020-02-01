@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tow Boat
   m_EditorClassIdentifier: 
   ID: 21
-  Tier: 0
+  Tier: 2
   Name: Tow Boat
   Image: {fileID: 0}
   Description: Move last river item to the front
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 3
   RepairGoldCost: 2
   IsTapped: 0
+  Scrappable: 1

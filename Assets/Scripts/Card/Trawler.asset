@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trawler
   m_EditorClassIdentifier: 
   ID: 24
-  Tier: 0
+  Tier: 2
   Name: Trawler
   Image: {fileID: 0}
   Description: River moves left 1
@@ -28,3 +28,4 @@ MonoBehaviour:
   RepairSteelCost: 5
   RepairGoldCost: 2
   IsTapped: 0
+  Scrappable: 1

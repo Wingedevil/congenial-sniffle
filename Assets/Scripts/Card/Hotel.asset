@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hotel
   m_EditorClassIdentifier: 
   ID: 23
-  Tier: 0
+  Tier: 2
   Name: Hotel
   Image: {fileID: 0}
   Description: Population +6, Happiness +10/turn
@@ -29,3 +29,4 @@ MonoBehaviour:
   RepairSteelCost: 3
   RepairGoldCost: 3
   IsTapped: 0
+  Scrappable: 1
