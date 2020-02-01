@@ -127,7 +127,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
         Debug.Log("You Lose");
     }
 
-    public void TryRepair(Card card) {
+    public bool TryRepair(Card card) {
         Assert.IsTrue(PlayerRiver.Contains(card) || card is Objective || card is Hut);
         // TODO: Ask about design for repair
         // Theres a chance we cant repair
@@ -155,12 +155,14 @@ public class GameLogicManager : Manager<GameLogicManager> {
             UIManager.Instance.DrawAssets();
             PlayerResources.Actions--;
             UIManager.Instance.UpdateResources();
+            return true;
         }
 
         if (PlayerResources.Actions == 0)
         {
             GameLoopManager.Instance.NoMoreActions();
         }
+        return false;
     }
 
     public bool CanRepair(Card card) {

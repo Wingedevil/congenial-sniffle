@@ -7,11 +7,14 @@ public class UIManager : Manager<UIManager>
 {
     public GameObject CardPrefab;
     public Transform RiverStart;
+    public Transform RiverEnd;
     public Transform StorageStart;
     public TextMeshProUGUI ResourcesText;
 
     public List<GameObject> RiverObjects;
     public List<GameObject> AssetObjects;
+    public GameObject RepairDrop;
+    public GameObject TrashDrop;
 
     public enum ClickType
     {
@@ -28,7 +31,7 @@ public class UIManager : Manager<UIManager>
             Destroy(go);
         }
         RiverObjects.Clear();
-
+        float space = (RiverEnd.position.x - RiverStart.position.x) / 7.0f;
         int i = 0;
         List<Card> cardsInBottomRow = IsRiverShown ? GameLogicManager.Instance.PlayerRiver : GameLogicManager.Instance.PlayerObjectives;
         foreach (Card card in cardsInBottomRow)
@@ -38,7 +41,7 @@ public class UIManager : Manager<UIManager>
                 ++i;
                 continue;
             }
-            GameObject go = GameObject.Instantiate(CardPrefab, RiverStart.position + Vector3.right * 1.8f * i, Quaternion.identity, transform);
+            GameObject go = GameObject.Instantiate(CardPrefab, RiverStart.position + Vector3.right * space * i, Quaternion.identity, transform);
             RiverObjects.Add(go);
             UICard uiCard = go.GetComponent<UICard>();
             uiCard.CardData = card;
@@ -46,6 +49,17 @@ public class UIManager : Manager<UIManager>
             ++i;
         }
     }
+
+    public void ToggleRepairDrop(bool toggle)
+    {
+        RepairDrop.SetActive(toggle);
+    }
+
+    public void ToggleTrashDrop(bool toggle)
+    {
+        TrashDrop.SetActive(toggle);
+    }
+    
 
     public void DrawAssets()
     {
