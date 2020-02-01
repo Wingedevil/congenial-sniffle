@@ -24,6 +24,7 @@ public class GameLoopManager : Manager<GameLoopManager>
     public void OnGameStart()
     {
         GameLogicManager.Instance.ResetActions();
+        GameLogicManager.Instance.PopulateObjectives();
         for (int i = 0; i < 3; ++i)
         {
             GameLogicManager.Instance.MoveRiver();

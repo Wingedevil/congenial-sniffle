@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hut : Card
+[CreateAssetMenu(fileName = "Hut", menuName = "ScriptableObjects/Hut", order = 1)]
+public class Hut : Objective
 {
     private void Awake() {
         Scrappable = false;

@@ -242,6 +242,7 @@ MonoBehaviour:
   ResourcesText: {fileID: 1168859705}
   RiverObjects: []
   AssetObjects: []
+  IsRiverShown: 1
   CurrentClickType: 0
 --- !u!1 &188425926
 GameObject:
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TIER_REQUIREMENTS: 000000000a00000014000000
   JunkCards:
-  - {fileID: 11400000, guid: 1de9247edbb2e7d4a820a6d959cfb2cc, type: 2}
+  - {fileID: 11400000, guid: 28bb95bc868897148a0db5d129a5ee04, type: 2}
   DeckOfCards:
   - {fileID: 11400000, guid: ab6aa86e33c02084f90a17d90cf3140d, type: 2}
   - {fileID: 11400000, guid: 1de9247edbb2e7d4a820a6d959cfb2cc, type: 2}
@@ -296,26 +297,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 70137a0bfc869db4eb59cf60f30323aa, type: 2}
   - {fileID: 11400000, guid: eb9681be3cf94d641941180161a8772d, type: 2}
   - {fileID: 11400000, guid: 27ec17cf873a1cc4e85d08bba047e688, type: 2}
-  - {fileID: 11400000, guid: feb78c90e308b484398363012da3938f, type: 2}
-  - {fileID: 11400000, guid: fa6a3cfdb79340f48b3d90fec8ff4162, type: 2}
-  - {fileID: 11400000, guid: d57b03384cc5d6d48808f2f94779acae, type: 2}
-  - {fileID: 11400000, guid: f2b9c9b1fde73dd47b93f01e701febd3, type: 2}
-  - {fileID: 11400000, guid: d29365002d46d894a881231240c48697, type: 2}
-  - {fileID: 11400000, guid: 8d0ed35c81a58bd428d908ab77a9b98c, type: 2}
-  - {fileID: 11400000, guid: 06e69124ac45b9442bd4fc8873e1afad, type: 2}
-  - {fileID: 11400000, guid: ad838480430c2574a8e0d554fa2bff76, type: 2}
-  - {fileID: 11400000, guid: 919b6a8aa6e97db49a958ae1f6a3b3ea, type: 2}
-  - {fileID: 11400000, guid: a3b8613ef7a9d20489b05ebebb93662f, type: 2}
-  - {fileID: 11400000, guid: 509654d5c8e0a4447955226c09e4ad49, type: 2}
-  - {fileID: 11400000, guid: e3bdfe234500de24ba68c059e2397ae3, type: 2}
-  - {fileID: 11400000, guid: 7b2f773240cfeb34cbf53ea7bc4ecef2, type: 2}
-  - {fileID: 11400000, guid: 900f625894995084fa7c2d12852e5b0f, type: 2}
-  - {fileID: 11400000, guid: 9a1767688c1f6bf49ba4235a878f2be3, type: 2}
-  - {fileID: 11400000, guid: a59a99ab6ead6804ab31d59b1fb75759, type: 2}
-  - {fileID: 11400000, guid: 90a1eb7e390e14a4d9c9b2736a6e53ef, type: 2}
-  - {fileID: 11400000, guid: db4a964b7d010044e97fa0e9f4f85818, type: 2}
-  - {fileID: 11400000, guid: 33d0386dea3ae9a4b9800d1d3569e966, type: 2}
-  ObjectiveCards: []
+  ObjectiveCards:
+  - {fileID: 11400000, guid: 4487cae01d1350f4e8bdd6dcabdb8fb6, type: 2}
+  - {fileID: 11400000, guid: c5b556a85a9857d49add40d35af4de5e, type: 2}
+  - {fileID: 11400000, guid: 6224f4245e407564c9515346d870e465, type: 2}
+  - {fileID: 11400000, guid: 2725a7a4d517f6e419bfb6f2c9d5eb36, type: 2}
 --- !u!1 &577925049
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,8 +429,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee23bd8010f6634d9ecc88dd69ecd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HutsBuilt: 0
   PlayerAssets: []
   PlayerRiver: []
+  PlayerObjectives:
+  - {fileID: 11400000, guid: 28bb95bc868897148a0db5d129a5ee04, type: 2}
 --- !u!4 &1050959443
 Transform:
   m_ObjectHideFlags: 0

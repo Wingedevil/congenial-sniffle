@@ -131,7 +131,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
     }
 
     public void TryRepair(Card card) {
-        Assert.IsTrue(PlayerRiver.Contains(card) || card is Objective);
+        Assert.IsTrue(PlayerRiver.Contains(card) || card is Objective || card is Hut);
         // TODO: Ask about design for repair
         // Theres a chance we cant repair
         if (PlayerResources.Actions > 0 && CanUseEffects(card.OnRepair) && CanRepair(card)) {
@@ -140,17 +140,20 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerResources.Gold -= card.RepairGoldCost;
             UseEffects(card.OnRepair);
 
-            if (card is Objective) {
+            if (card is Hut) {
+                ++HutsBuilt;
+                PlayerAssets.Add(card);
+            } else if (card is Objective) {
                 int index2 = PlayerObjectives.IndexOf(card);
                 PlayerObjectives[index2] = null;
                 PlayerAssets.Add(card);
-                return;
+            } else {
+                DeckManager.Instance.Repaired(card);
+                int index = PlayerRiver.IndexOf(card);
+                PlayerRiver[index] = null;
+                PlayerAssets.Add(card);
             }
 
-            int index = PlayerRiver.IndexOf(card);
-            PlayerRiver[index] = null;
-            PlayerAssets.Add(card);
-            DeckManager.Instance.Repaired(card);
             UIManager.Instance.DrawRiver();
             UIManager.Instance.DrawAssets();
             PlayerResources.Actions--;
