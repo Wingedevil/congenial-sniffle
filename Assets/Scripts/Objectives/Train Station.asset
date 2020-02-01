@@ -9,22 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 853900f274b82b844b509be528703496, type: 3}
   m_Name: Train Station
   m_EditorClassIdentifier: 
-  ID: 105
+  ID: 0
   Tier: 0
-  Name: Train Station
+  Name: 
   Image: {fileID: 0}
-  Description: Get +1 of each resource each turn
+  Description: 
   OnRepair: []
   OnAction: []
-  OnEndTurn:
-  - {fileID: 11400000, guid: d6d0fa70e83d1314b88c224e851c3de9, type: 2}
+  OnEndTurn: []
   ScrapWoodCost: 0
   ScrapSteelCost: 0
   ScrapGoldCost: 0
-  RepairWoodCost: 7
-  RepairSteelCost: 7
+  RepairWoodCost: 0
+  RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
+  Scrappable: 0
