@@ -15,6 +15,11 @@ public class GameLoopManager : Manager<GameLoopManager>
 
     public GamePhase CurrentPhase = GamePhase.PREGAME;
 
+    void Start()
+    {
+        OnGameStart();
+    }
+
     public void OnGameStart()
     {
         GameLogicManager.Instance.ResetActions();

@@ -6,10 +6,10 @@ using UnityEngine.Assertions;
 public class GameLogicManager : Manager<GameLogicManager> {
     public const float HAPPINESS_PER_POPULATION = 0.5f;
 
-    public Resources PlayerResources;
+    public Resources PlayerResources = new Resources();
     public Upgrades PlayerUpgrades;
     public List<Card> PlayerAssets;
-    public List<Card> PlayerRiver;
+    public List<Card> PlayerRiver = new List<Card>();
 
     public void MoveRiver() {
         // draw from deck
@@ -23,6 +23,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
         }
 
         PlayerRiver.Insert(0, drawnCard);
+        UIManager.Instance.DrawRiver();
     }
 
     public void ResetActions()
@@ -136,6 +137,8 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerRiver[index] = null;
             PlayerAssets.Add(card);
             DeckManager.Instance.Repaired(card);
+            UIManager.Instance.DrawRiver();
+            UIManager.Instance.DrawAssets();
         }
     }
 
@@ -149,6 +152,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
         int index = PlayerRiver.IndexOf(card);
         PlayerRiver[index] = null;
         DeckManager.Instance.Scrapped(card);
+        UIManager.Instance.DrawRiver();
         return true;
     }
 
