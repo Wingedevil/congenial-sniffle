@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853900f274b82b844b509be528703496, type: 3}
   m_Name: Alchemist
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 103
   Tier: 0
-  Name: 
+  Name: Alchemist
   Image: {fileID: 0}
-  Description: 
+  Description: Transmute 1S to 1G
   OnRepair: []
-  OnAction: []
+  OnAction:
+  - {fileID: 11400000, guid: cf9461be4f23fc144ada627895ad548a, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 0
   ScrapSteelCost: 0
   ScrapGoldCost: 0
   RepairWoodCost: 0
-  RepairSteelCost: 0
-  RepairGoldCost: 0
+  RepairSteelCost: 6
+  RepairGoldCost: 6
   IsTapped: 0
   Scrappable: 0
