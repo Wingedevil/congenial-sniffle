@@ -15,6 +15,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
     public TextMeshProUGUI ScrapWoodCost;
     public TextMeshProUGUI ScrapSteelCost;
     public TextMeshProUGUI ScrapGoldCost;
+    public TextMeshProUGUI PopCost;
 
     private SpriteRenderer sprite;
 
@@ -32,6 +33,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         RepairWoodCost.text = CardData.RepairWoodCost.ToString();
         RepairSteelCost.text = CardData.RepairSteelCost.ToString();
         RepairGoldCost.text = CardData.RepairGoldCost.ToString();
+        PopCost.text = CardData.PopulationRequirement > 0 ? CardData.PopulationRequirement.ToString() : "";
         if (CardData.Scrappable)
         {
             ScrapWoodCost.text = CardData.ScrapWoodCost.ToString();

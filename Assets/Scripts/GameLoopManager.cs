@@ -29,6 +29,7 @@ public class GameLoopManager : Manager<GameLoopManager>
         {
             GameLogicManager.Instance.MoveRiver();
         }
+        UIManager.Instance.DrawAssets();
         UIManager.Instance.UpdateResources();
         // we can do some delay before this
         CurrentPhase = GamePhase.INPUT;

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
+  m_Name: MM Transmuter
+  m_EditorClassIdentifier: 
+  ID: 7
+  Tier: 0
+  Copies: 1
+  Name: Minor Matter Transmuter
+  Image: {fileID: 21300000, guid: 82150f7f986e9884e911ef876687774c, type: 3}
+  Description: Transmute 2G to 1S
+  OnRepair: []
+  OnAction:
+  - {fileID: 11400000, guid: e3090eef23861dd4f8342c502e267cb1, type: 2}
+  OnEndTurn: []
+  ScrapWoodCost: 0
+  ScrapSteelCost: 0
+  ScrapGoldCost: 2
+  PopulationRequirement: 4
+  RepairWoodCost: 0
+  RepairSteelCost: 0
+  RepairGoldCost: 4
+  IsTapped: 0
+  Scrappable: 1

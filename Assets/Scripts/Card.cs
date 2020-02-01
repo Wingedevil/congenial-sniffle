@@ -8,6 +8,8 @@ public class Card : ScriptableObject
     public int ID;
     public int Tier;
 
+    public int Copies = 2;
+
     public string Name;
     public Sprite Image;
 
@@ -19,7 +21,8 @@ public class Card : ScriptableObject
     public int ScrapWoodCost;
     public int ScrapSteelCost;
     public int ScrapGoldCost;
-
+    
+    public int PopulationRequirement;
     public int RepairWoodCost;
     public int RepairSteelCost;
     public int RepairGoldCost;

@@ -11,6 +11,6 @@ public class Hut : Objective
 
     public override void NotUnityUpdate() {
         base.NotUnityUpdate();
-        RepairWoodCost = 5 + 2 * GameLogicManager.Instance.HutsBuilt;
+        RepairWoodCost = 5 + 4 * GameLogicManager.Instance.HutsBuilt;
     }
 }

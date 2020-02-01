@@ -104,6 +104,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
     }
 
     public void TriggerEndOfTurnEffects() {
+        Debug.Log("Free Pop: " + (PlayerResources.Population - PlayerResources.PopulationAtWork));
         foreach (Card card in PlayerAssets) {
             if (CanUseEffects(card.OnEndTurn)) {
                 UseEffects(card.OnEndTurn);
@@ -135,6 +136,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerResources.Wood -= card.RepairWoodCost;
             PlayerResources.Steel -= card.RepairSteelCost;
             PlayerResources.Gold -= card.RepairGoldCost;
+            PlayerResources.PopulationAtWork += card.PopulationRequirement;
             UseEffects(card.OnRepair);
 
             if (card is Hut) {
@@ -172,7 +174,8 @@ public class GameLogicManager : Manager<GameLogicManager> {
     public bool CanRepair(Card card) {
         return (PlayerResources.Wood >= card.RepairWoodCost &&
             PlayerResources.Steel >= card.RepairSteelCost &&
-            PlayerResources.Gold >= card.RepairGoldCost);
+            PlayerResources.Gold >= card.RepairGoldCost &&
+            PlayerResources.Population >= card.PopulationRequirement + PlayerResources.PopulationAtWork);
     }
     public bool Scrap(Card card)
     {
