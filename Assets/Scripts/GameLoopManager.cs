@@ -25,7 +25,7 @@ public class GameLoopManager : Manager<GameLoopManager>
     {
         GameLogicManager.Instance.ResetActions();
         GameLogicManager.Instance.PopulateObjectives();
-        for (int i = 0; i < 3; ++i)
+        for (int i = 0; i < 5; ++i)
         {
             GameLogicManager.Instance.MoveRiver();
         }

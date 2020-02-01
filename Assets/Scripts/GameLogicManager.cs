@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 public class GameLogicManager : Manager<GameLogicManager> {
-    public const float HAPPINESS_PER_POPULATION = 0.5f;
+    public const float HAPPINESS_PER_POPULATION = 0.5f; // actually resources
     public const int NUMBER_OF_OBJECTIVES = 4;
 
     public int HutsBuilt = 0;
@@ -39,19 +39,16 @@ public class GameLogicManager : Manager<GameLogicManager> {
     }
 
     public void ResetActions() {
-        PlayerResources.Actions = 1 + PlayerResources.Population / 10;
+        PlayerResources.Actions = 1;
     }
 
     public void DiscardResources() {
         // we could display UI here or just do some automatic deduction
 
         // todo refine?
-        if (PlayerResources.Wood + PlayerResources.Steel + PlayerResources.Gold > PlayerResources.Storage)
-        {
-            IncreaseWood(-Mathf.CeilToInt(PlayerResources.Wood / 2f));
-            IncreaseSteel(-Mathf.CeilToInt(PlayerResources.Steel / 2f));
-            IncreaseGold(-Mathf.CeilToInt(PlayerResources.Gold / 2f));
-        }
+        IncreaseWood(-1 * Mathf.Max(PlayerResources.Wood - PlayerResources.Storage, 0));
+        IncreaseSteel(-1 * Mathf.Max(PlayerResources.Steel - PlayerResources.Storage, 0));
+        IncreaseGold(-1 * Mathf.Max(PlayerResources.Gold - PlayerResources.Storage, 0));
     }
 
     public bool TapCard(Card card)
@@ -181,9 +178,9 @@ public class GameLogicManager : Manager<GameLogicManager> {
             DeckManager.Instance.Scrapped(card);
             UIManager.Instance.DrawRiver();
             PlayerResources.Actions--;
-            PlayerResources.Wood += card.ScrapWoodCost == 0 ? card.ScrapWoodCost + PlayerUpgrades.WoodScrapBonus : 0;
-            PlayerResources.Steel += card.ScrapSteelCost == 0 ? card.ScrapSteelCost + PlayerUpgrades.SteelScrapBonus : 0;
-            PlayerResources.Gold += card.ScrapGoldCost == 0 ? card.ScrapGoldCost + PlayerUpgrades.GoldScrapBonus : 0;
+            PlayerResources.Wood += card.ScrapWoodCost != 0 ? card.ScrapWoodCost + PlayerUpgrades.WoodScrapBonus : 0;
+            PlayerResources.Steel += card.ScrapSteelCost != 0 ? card.ScrapSteelCost + PlayerUpgrades.SteelScrapBonus : 0;
+            PlayerResources.Gold += card.ScrapGoldCost != 0 ? card.ScrapGoldCost + PlayerUpgrades.GoldScrapBonus : 0;
             UIManager.Instance.UpdateResources();
 
             if (PlayerResources.Actions == 0)
