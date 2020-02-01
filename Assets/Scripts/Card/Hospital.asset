@@ -19,12 +19,13 @@ MonoBehaviour:
   Description: 'Happiness +10/turn. Action: Happiness +10 (one off)'
   OnRepair: []
   OnAction:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e32bf21fbdc3f5048ae0d10f4c11849e, type: 2}
   OnEndTurn:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e32bf21fbdc3f5048ae0d10f4c11849e, type: 2}
   ScrapWoodCost: 0
   ScrapSteelCost: 0
   ScrapGoldCost: 0
   RepairWoodCost: 4
   RepairSteelCost: 5
   RepairGoldCost: 4
+  IsTapped: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
   Description: Transmute 3S to 1G
   OnRepair: []
   OnAction:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 1dfd112b9ad45494ca0d083818234964, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 0
   ScrapSteelCost: 1
@@ -27,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 1
   RepairSteelCost: 5
   RepairGoldCost: 4
+  IsTapped: 0

@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Welder
   Image: {fileID: 0}
   Description: Steel Costs 1 less to repair
-  OnRepair: []
+  OnRepair:
+  - {fileID: 11400000, guid: be7453751f3112643a07794af20bdd0d, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 0
@@ -26,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 0
   RepairSteelCost: 7
   RepairGoldCost: 3
+  IsTapped: 0

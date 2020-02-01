@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Metal Finder
   Image: {fileID: 0}
   Description: Scrap +1 Steel
-  OnRepair: []
+  OnRepair:
+  - {fileID: 11400000, guid: 0bd015e654b9cce47b7be81f3ddc80d1, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 0
@@ -26,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 0
   RepairSteelCost: 6
   RepairGoldCost: 0
+  IsTapped: 0

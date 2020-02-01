@@ -18,7 +18,7 @@ MonoBehaviour:
   Image: {fileID: 0}
   Description: Happiness +20 on build
   OnRepair:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3da1bab77122b214eba89b8d731eb9f4, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 2
@@ -27,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 5
   RepairSteelCost: 0
   RepairGoldCost: 0
+  IsTapped: 0

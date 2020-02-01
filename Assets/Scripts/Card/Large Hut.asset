@@ -16,9 +16,10 @@ MonoBehaviour:
   Tier: 0
   Name: Large Hut
   Image: {fileID: 0}
-  Description: Population +7, Happiness +10 (one off)
+  Description: Population +6, Happiness +10 (one off)
   OnRepair:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e6b1bbc26df38114081405c7c0f8bf58, type: 2}
+  - {fileID: 11400000, guid: e32bf21fbdc3f5048ae0d10f4c11849e, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 2
@@ -27,3 +28,4 @@ MonoBehaviour:
   RepairWoodCost: 7
   RepairSteelCost: 0
   RepairGoldCost: 0
+  IsTapped: 0

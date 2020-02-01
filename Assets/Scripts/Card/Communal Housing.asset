@@ -18,7 +18,7 @@ MonoBehaviour:
   Image: {fileID: 0}
   Description: Population +8
   OnRepair:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cb812a76d7bfe524ab4c27c6a9ec3b31, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 2
@@ -27,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 6
   RepairSteelCost: 0
   RepairGoldCost: 0
+  IsTapped: 0

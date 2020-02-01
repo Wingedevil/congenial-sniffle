@@ -16,10 +16,11 @@ MonoBehaviour:
   Tier: 0
   Name: School
   Image: {fileID: 0}
-  Description: 'Scrap +1 Gold (once per turn), Action: River moves 1 left'
-  OnRepair: []
+  Description: 'Scrap +1 Gold, Action: River moves 1 left'
+  OnRepair:
+  - {fileID: 11400000, guid: f4174e5a0401b5f4fbb5e2c34a6d54b9, type: 2}
   OnAction:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5ff6bc917b052c640a4f807674b85be9, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 0
   ScrapSteelCost: 0
@@ -27,3 +28,4 @@ MonoBehaviour:
   RepairWoodCost: 3
   RepairSteelCost: 2
   RepairGoldCost: 6
+  IsTapped: 0

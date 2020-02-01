@@ -18,7 +18,7 @@ MonoBehaviour:
   Image: {fileID: 0}
   Description: River Size +1
   OnRepair:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f109fcace38d26b4f9d2294093886327, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 0
   RepairSteelCost: 4
   RepairGoldCost: 0
+  IsTapped: 0

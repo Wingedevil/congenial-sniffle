@@ -19,7 +19,7 @@ MonoBehaviour:
   Description: River moves left 1
   OnRepair: []
   OnAction:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5ff6bc917b052c640a4f807674b85be9, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 2
   ScrapSteelCost: 1
@@ -27,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 6
   RepairSteelCost: 5
   RepairGoldCost: 2
+  IsTapped: 0

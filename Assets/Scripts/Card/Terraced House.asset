@@ -18,13 +18,14 @@ MonoBehaviour:
   Image: {fileID: 0}
   Description: Population +5, Happiness +5/turn
   OnRepair:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 64baa9e663b1d664fadcc9c1fe830a9e, type: 2}
   OnAction: []
   OnEndTurn:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a4813a536613bee41b52fafd868308af, type: 2}
   ScrapWoodCost: 2
   ScrapSteelCost: 1
   ScrapGoldCost: 0
   RepairWoodCost: 5
   RepairSteelCost: 3
   RepairGoldCost: 0
+  IsTapped: 0

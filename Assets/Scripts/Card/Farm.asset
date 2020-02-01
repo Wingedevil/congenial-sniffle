@@ -20,10 +20,11 @@ MonoBehaviour:
   OnRepair: []
   OnAction: []
   OnEndTurn:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e32bf21fbdc3f5048ae0d10f4c11849e, type: 2}
   ScrapWoodCost: 1
   ScrapSteelCost: 1
   ScrapGoldCost: 0
   RepairWoodCost: 5
   RepairSteelCost: 3
   RepairGoldCost: 0
+  IsTapped: 0

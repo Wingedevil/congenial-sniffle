@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Sawmill
   Image: {fileID: 0}
   Description: Scrap +1 Wood
-  OnRepair: []
+  OnRepair:
+  - {fileID: 11400000, guid: 5987d6bf9d5ad104dbc20eaa2bb9cea2, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 0
@@ -26,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 5
   RepairSteelCost: 2
   RepairGoldCost: 2
+  IsTapped: 0

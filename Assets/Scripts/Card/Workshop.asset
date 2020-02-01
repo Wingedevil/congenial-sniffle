@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Workshop
   Image: {fileID: 0}
   Description: Wood Costs 1 less to Repair
-  OnRepair: []
+  OnRepair:
+  - {fileID: 11400000, guid: f109fcace38d26b4f9d2294093886327, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 0
@@ -26,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 6
   RepairSteelCost: 0
   RepairGoldCost: 2
+  IsTapped: 0

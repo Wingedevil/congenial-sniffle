@@ -18,7 +18,7 @@ MonoBehaviour:
   Image: {fileID: 0}
   Description: Storage +1
   OnRepair:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4bacacc670d8740498dff4a777f7e777, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 1
@@ -27,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 3
   RepairSteelCost: 0
   RepairGoldCost: 0
+  IsTapped: 0

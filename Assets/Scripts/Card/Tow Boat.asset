@@ -19,7 +19,7 @@ MonoBehaviour:
   Description: Move last river item to the front
   OnRepair: []
   OnAction:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a4cb513fa1988614bb4c3681742131ec, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 0
   ScrapSteelCost: 1
@@ -27,3 +27,4 @@ MonoBehaviour:
   RepairWoodCost: 4
   RepairSteelCost: 3
   RepairGoldCost: 2
+  IsTapped: 0
