@@ -56,12 +56,16 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
             if (h.gameObject.tag == "Drop")
             {
                 if (GameLogicManager.Instance.TryRepair(CardData))
+                {
                     return;
+                }
             }
-             if (h.gameObject.tag == "Trash")
+            if (h.gameObject.tag == "Trash")
             {
                 if (GameLogicManager.Instance.Scrap(CardData))
+                {
                     return;
+                }
             }
         }
         transform.position = OriginalPosition;

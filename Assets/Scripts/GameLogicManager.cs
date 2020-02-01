@@ -155,6 +155,8 @@ public class GameLogicManager : Manager<GameLogicManager> {
             UIManager.Instance.DrawAssets();
             PlayerResources.Actions--;
             UIManager.Instance.UpdateResources();
+            UIManager.Instance.ToggleRepairDrop(false);
+            UIManager.Instance.ToggleTrashDrop(false);
             return true;
         }
 
@@ -184,6 +186,8 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerResources.Steel += card.ScrapSteelCost != 0 ? card.ScrapSteelCost + PlayerUpgrades.SteelScrapBonus : 0;
             PlayerResources.Gold += card.ScrapGoldCost != 0 ? card.ScrapGoldCost + PlayerUpgrades.GoldScrapBonus : 0;
             UIManager.Instance.UpdateResources();
+            UIManager.Instance.ToggleRepairDrop(false);
+            UIManager.Instance.ToggleTrashDrop(false);
 
             if (PlayerResources.Actions == 0)
             {

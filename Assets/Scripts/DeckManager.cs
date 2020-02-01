@@ -23,6 +23,7 @@ public class DeckManager : Manager<DeckManager>
         forbiddenCards.Enqueue(new List<Card>());
     }
 
+
     public Objective DrawObjective() {
         if (ObjectiveCards.Count <= 0) {
             return null;

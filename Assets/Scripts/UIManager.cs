@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
 
 public class UIManager : Manager<UIManager>
@@ -10,6 +10,13 @@ public class UIManager : Manager<UIManager>
     public Transform RiverEnd;
     public Transform StorageStart;
     public TextMeshProUGUI ResourcesText;
+    public TextMeshProUGUI WoodText;
+    public TextMeshProUGUI SteelText;
+    public TextMeshProUGUI GoldText;
+    public TextMeshProUGUI TurnText;
+    public TextMeshProUGUI PopText;
+    public TextMeshProUGUI HappyText;
+
 
     public List<GameObject> RiverObjects;
     public List<GameObject> AssetObjects;
@@ -90,18 +97,24 @@ public class UIManager : Manager<UIManager>
     public void UpdateResources()
     {
         Resources resources = GameLogicManager.Instance.PlayerResources;
-        ResourcesText.text = string.Format("W: {0}, S: {1}, G: {2}, Actions: {3}, River Size: {4}, Pop: {5}, Happy: {8} Turn: {6}, Click: {7}, Bottom Row: {9}",
-            resources.Wood,
-            resources.Steel,
-            resources.Gold,
-            resources.Actions,
-            resources.RiverSize,
-            resources.Population,
-            GameLoopManager.Instance.Turn,
-            UIManager.Instance.CurrentClickType,
-            resources.Happiness,
-            IsRiverShown ? "River" : "Objectives"
-        );
+        WoodText.text = resources.Wood.ToString();
+        SteelText.text = resources.Steel.ToString();
+        GoldText.text = resources.Gold.ToString();
+        TurnText.text = "Turn: " + GameLoopManager.Instance.Turn.ToString();
+        PopText.text = resources.Population.ToString();
+        HappyText.text = resources.Happiness.ToString();
+        // ResourcesText.text = string.Format("W: {0}, S: {1}, G: {2}, Actions: {3}, River Size: {4}, Pop: {5}, Happy: {8} Turn: {6}, Click: {7}, Bottom Row: {9}",
+        //     resources.Wood,
+        //     resources.Steel,
+        //     resources.Gold,
+        //     resources.Actions,
+        //     resources.RiverSize,
+        //     resources.Population,
+        //     GameLoopManager.Instance.Turn,
+        //     UIManager.Instance.CurrentClickType,
+        //     resources.Happiness,
+        //     IsRiverShown ? "River" : "Objectives"
+        // );
     }
 
     void Update()
