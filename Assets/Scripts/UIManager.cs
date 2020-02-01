@@ -17,6 +17,8 @@ public class UIManager : Manager<UIManager>
     public TextMeshProUGUI PopText;
     public TextMeshProUGUI HappyText;
 
+    public HoverCard Hover;
+
 
     public List<GameObject> RiverObjects;
     public List<GameObject> AssetObjects;
@@ -31,6 +33,7 @@ public class UIManager : Manager<UIManager>
 
     public bool IsRiverShown = true;
     public ClickType CurrentClickType = ClickType.REPAIR;
+
     public void DrawRiver()
     {
         foreach (GameObject go in RiverObjects)
@@ -115,6 +118,18 @@ public class UIManager : Manager<UIManager>
         //     resources.Happiness,
         //     IsRiverShown ? "River" : "Objectives"
         // );
+    }
+
+    public void DrawHovered(Card card, Vector3 pos)
+    {
+        Hover.gameObject.SetActive(true);
+        Hover.gameObject.transform.position = pos;
+        Hover.UpdateCard(card);
+    }
+
+    public void DisableHovered()
+    {
+        Hover.gameObject.SetActive(false);
     }
 
     void Update()

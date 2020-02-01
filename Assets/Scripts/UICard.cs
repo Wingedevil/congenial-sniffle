@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerUpHandler
+public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Card CardData;
     public Sprite DefaultSprite;
@@ -71,6 +71,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         transform.position = OriginalPosition;
         UIManager.Instance.ToggleRepairDrop(false);
         UIManager.Instance.ToggleTrashDrop(false);
+        UIManager.Instance.DisableHovered();
     }
 
     public void OnDrag(PointerEventData e)
@@ -82,7 +83,11 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         pos.z = -1.1f;
         transform.position = pos;
         bool canRepair = GameLogicManager.Instance.CanRepair(CardData);
+
         UIManager.Instance.ToggleRepairDrop(canRepair);
+        pos = transform.position;
+        pos.x += e.position.x > Screen.width / 2.0 ? -3.5f : 3.5f;
+        UIManager.Instance.DrawHovered(CardData, pos);
         UIManager.Instance.ToggleTrashDrop(true);
     }
 
@@ -109,5 +114,20 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
                 transform.Rotate(0, 0, 90, Space.Self);
             }
         }
+    }
+
+    public void OnPointerEnter(PointerEventData e)
+    {
+        Vector3 pos = transform.position;
+        pos.x += e.position.x > Screen.width / 2.0 ? -3.5f : 3.5f;
+        UIManager.Instance.DrawHovered(CardData, pos);
+    }
+
+    //Detect when Cursor leaves the GameObject
+    public void OnPointerExit(PointerEventData pointerEventData)
+    {
+        //Output the following message with the GameObject's name
+        Debug.Log("Cursor Exiting " + name + " GameObject");
+        UIManager.Instance.DisableHovered();
     }
 }

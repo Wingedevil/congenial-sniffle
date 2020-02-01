@@ -157,6 +157,8 @@ public class GameLogicManager : Manager<GameLogicManager> {
             UIManager.Instance.UpdateResources();
             UIManager.Instance.ToggleRepairDrop(false);
             UIManager.Instance.ToggleTrashDrop(false);
+            UIManager.Instance.DisableHovered();
+
             if (PlayerResources.Actions == 0)
             {
                 GameLoopManager.Instance.NoMoreActions();
@@ -188,6 +190,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             UIManager.Instance.UpdateResources();
             UIManager.Instance.ToggleRepairDrop(false);
             UIManager.Instance.ToggleTrashDrop(false);
+            UIManager.Instance.DisableHovered();
 
             if (PlayerResources.Actions == 0)
             {
