@@ -10,6 +10,8 @@ public class DeckManager : Manager<DeckManager>
 
     public Card[] DeckOfCards;
 
+    public List<Objective> ObjectiveCards;
+
     // from downstreamed or scrapped
     private List<Card> deadCards = new List<Card>();
     private Queue<List<Card>> forbiddenCards = new Queue<List<Card>>();
@@ -19,6 +21,16 @@ public class DeckManager : Manager<DeckManager>
         forbiddenCards.Enqueue(new List<Card>());
         forbiddenCards.Enqueue(new List<Card>());
         forbiddenCards.Enqueue(new List<Card>());
+    }
+
+    public Objective DrawObjective() {
+        if (ObjectiveCards.Count <= 0) {
+            return null;
+        }
+
+        Objective drawn = ObjectiveCards[Random.Range(0, ObjectiveCards.Count)];
+        ObjectiveCards.Remove(drawn);
+        return drawn;
     }
 
     public Card Draw() {

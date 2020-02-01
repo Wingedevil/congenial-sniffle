@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class GameLogicManager : Manager<GameLogicManager>
-{
+public class GameLogicManager : Manager<GameLogicManager> {
+    public const float HAPPINESS_PER_POPULATION = 0.5f;
+
     public Resources PlayerResources;
     public Upgrades PlayerUpgrades;
     public List<Card> PlayerAssets;
     public List<Card> PlayerRiver;
 
-    public void MoveRiver()
-    {
+    public void MoveRiver() {
+        // draw from deck
+        Card drawnCard = DeckManager.Instance.Draw();
+
         // Remove last card
         if (PlayerRiver.Count >= PlayerResources.RiverSize)
         {
@@ -19,8 +22,6 @@ public class GameLogicManager : Manager<GameLogicManager>
             PlayerRiver.RemoveAt(PlayerRiver.Count - 1);
         }
 
-        // draw from deck
-        Card drawnCard = DeckManager.Instance.Draw();
         PlayerRiver.Insert(0, drawnCard);
     }
 
@@ -32,6 +33,11 @@ public class GameLogicManager : Manager<GameLogicManager>
     public void DiscardResources()
     {
         // we could display UI here or just do some automatic deduction
+
+        // todo refine?
+        IncreaseWood(Mathf.CeilToInt(PlayerResources.Wood / 2f));
+        IncreaseSteel(Mathf.CeilToInt(PlayerResources.Steel / 2f));
+        IncreaseGold(Mathf.CeilToInt(PlayerResources.Gold / 2f));
     }
 
     public void TapCard(Card card)
@@ -97,6 +103,25 @@ public class GameLogicManager : Manager<GameLogicManager>
                 UseEffects(card.OnEndTurn);
             }
         }
+        HappinessUpkeep();
+        DiscardResources();
+
+        CheckLoseCond();
+    }
+
+    public void HappinessUpkeep() {
+        IncreaseHappiness(Mathf.FloorToInt(HAPPINESS_PER_POPULATION * PlayerResources.Population * -1));
+    }
+
+    public void CheckLoseCond() {
+        if (PlayerResources.Happiness <= 0) {
+            LoseTheGame();
+        }
+    }
+
+    public void LoseTheGame() {
+        // todo
+        Debug.Log("You Lose");
     }
 
     public void TryRepair(Card card)
@@ -114,12 +139,17 @@ public class GameLogicManager : Manager<GameLogicManager>
         }
     }
 
-    public void Scrap(Card card)
+    public bool Scrap(Card card)
     {
-        Assert.IsTrue(PlayerRiver.Contains(card));
+        // Assert.IsTrue(PlayerRiver.Contains(card));
+        if (!card.Scrappable) {
+            return false;
+        }
+
         int index = PlayerRiver.IndexOf(card);
         PlayerRiver[index] = null;
         DeckManager.Instance.Scrapped(card);
+        return true;
     }
 
     public void IncreaseWood(int amt)

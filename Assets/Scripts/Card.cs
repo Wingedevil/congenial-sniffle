@@ -25,4 +25,7 @@ public class Card : ScriptableObject
     public int RepairGoldCost;
 
     public bool IsTapped;
+
+    [HideInInspector]
+    public bool Scrappable = true;
 }
