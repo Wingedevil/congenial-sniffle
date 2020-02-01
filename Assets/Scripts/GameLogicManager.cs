@@ -43,10 +43,12 @@ public class GameLogicManager : Manager<GameLogicManager> {
 
     public void TapCard(Card card)
     {
-        if (!card.IsTapped && CanUseEffects(card.OnAction))
+        if (!card.IsTapped && CanUseEffects(card.OnAction) && PlayerResources.Actions > 0)
         {
             UseEffects(card.OnAction);
             card.IsTapped = true;
+            PlayerResources.Actions--;
+            UIManager.Instance.UpdateResources();
         }
 
         if (PlayerResources.Actions == 0)
@@ -130,7 +132,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
         Assert.IsTrue(PlayerRiver.Contains(card));
         // TODO: Ask about design for repair
         // Theres a chance we cant repair
-        if (CanUseEffects(card.OnRepair))
+        if (PlayerResources.Actions > 0 && CanUseEffects(card.OnRepair))
         {
             UseEffects(card.OnRepair);
             int index = PlayerRiver.IndexOf(card);
@@ -139,21 +141,35 @@ public class GameLogicManager : Manager<GameLogicManager> {
             DeckManager.Instance.Repaired(card);
             UIManager.Instance.DrawRiver();
             UIManager.Instance.DrawAssets();
+            PlayerResources.Actions--;
+            UIManager.Instance.UpdateResources();
+        }
+
+        if (PlayerResources.Actions == 0)
+        {
+            GameLoopManager.Instance.NoMoreActions();
         }
     }
 
     public bool Scrap(Card card)
     {
         // Assert.IsTrue(PlayerRiver.Contains(card));
-        if (!card.Scrappable) {
-            return false;
-        }
+        if (card.Scrappable && PlayerResources.Actions > 0)
+        {
+            int index = PlayerRiver.IndexOf(card);
+            PlayerRiver[index] = null;
+            DeckManager.Instance.Scrapped(card);
+            UIManager.Instance.DrawRiver();
+            PlayerResources.Actions--;
+            UIManager.Instance.UpdateResources();
 
-        int index = PlayerRiver.IndexOf(card);
-        PlayerRiver[index] = null;
-        DeckManager.Instance.Scrapped(card);
-        UIManager.Instance.DrawRiver();
-        return true;
+            if (PlayerResources.Actions == 0)
+            {
+                GameLoopManager.Instance.NoMoreActions();
+            }
+            return true;
+        }
+        return false;
     }
 
     public void IncreaseWood(int amt)

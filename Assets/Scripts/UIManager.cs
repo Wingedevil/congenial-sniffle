@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : Manager<UIManager>
 {
     public GameObject CardPrefab;
     public Transform RiverStart;
     public Transform StorageStart;
+    public TextMeshProUGUI ResourcesText;
 
     public List<GameObject> RiverObjects;
     public List<GameObject> AssetObjects;
@@ -66,6 +68,20 @@ public class UIManager : Manager<UIManager>
             uiCard.enabled = false;
             ++i;
         }
+    }
+
+    public void UpdateResources()
+    {
+        Resources resources = GameLogicManager.Instance.PlayerResources;
+        ResourcesText.text = string.Format("W: {0}, S: {1}, G: {2}, Actions: {3}, River Size: {4}, Pop: {5}, Turn: {6}",
+            resources.Wood,
+            resources.Steel,
+            resources.Gold,
+            resources.Actions,
+            resources.RiverSize,
+            resources.Population,
+            GameLoopManager.Instance.Turn
+        );
     }
 
     void Update()

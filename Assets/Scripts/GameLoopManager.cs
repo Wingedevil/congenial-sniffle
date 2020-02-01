@@ -14,6 +14,7 @@ public class GameLoopManager : Manager<GameLoopManager>
     }
 
     public GamePhase CurrentPhase = GamePhase.PREGAME;
+    public int Turn = 1;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class GameLoopManager : Manager<GameLoopManager>
         {
             GameLogicManager.Instance.MoveRiver();
         }
+        UIManager.Instance.UpdateResources();
         // we can do some delay before this
         CurrentPhase = GamePhase.INPUT;
     }
@@ -34,8 +36,10 @@ public class GameLoopManager : Manager<GameLoopManager>
     void PreInput()
     {
         CurrentPhase = GamePhase.PREINPUT;
+        Turn++;
         GameLogicManager.Instance.ResetActions();
         GameLogicManager.Instance.MoveRiver();
+        UIManager.Instance.UpdateResources();
         // we can do some delay before this
         CurrentPhase = GamePhase.INPUT;
     }
