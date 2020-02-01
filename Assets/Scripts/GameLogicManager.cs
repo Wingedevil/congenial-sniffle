@@ -157,13 +157,13 @@ public class GameLogicManager : Manager<GameLogicManager> {
             UIManager.Instance.UpdateResources();
             UIManager.Instance.ToggleRepairDrop(false);
             UIManager.Instance.ToggleTrashDrop(false);
+            if (PlayerResources.Actions == 0)
+            {
+                GameLoopManager.Instance.NoMoreActions();
+            }
             return true;
         }
 
-        if (PlayerResources.Actions == 0)
-        {
-            GameLoopManager.Instance.NoMoreActions();
-        }
         return false;
     }
 

@@ -75,6 +75,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
 
     public void OnDrag(PointerEventData e)
     {
+        if (IsInAssets) return;
         Vector3 pos = transform.position;
         pos.x = Camera.main.ScreenToWorldPoint(e.position).x;
         pos.y = Camera.main.ScreenToWorldPoint(e.position).y;
@@ -101,7 +102,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         //         }
         //     }
         // } else
-        if (!CardData.IsTapped && CardData.OnAction.Length > 0)
+        if (IsInAssets && !CardData.IsTapped && CardData.OnAction.Length > 0)
         {
             if (GameLogicManager.Instance.TapCard(CardData))
             {
