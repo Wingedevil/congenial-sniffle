@@ -262,7 +262,7 @@ RectTransform:
   m_GameObject: {fileID: 4292522103068526265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014831503, y: 0.014831503, z: 0.014831503}
+  m_LocalScale: {x: 0.022890942, y: 0.022890942, z: 0.022890942}
   m_Children:
   - {fileID: 4292522102598342712}
   - {fileID: 4292522103759928749}
@@ -297,6 +297,7 @@ MonoBehaviour:
   Description: {fileID: 4292522103759928748}
   RepairCost: {fileID: 4292522103232759296}
   ScrapCost: {fileID: 4292522104520820505}
+  IsInAssets: 0
 --- !u!1 &4292522103202287788
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class UICard : MonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI ScrapCost;
 
     private SpriteRenderer sprite;
+
+    public bool IsInAssets = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,14 +34,24 @@ public class UICard : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData data)
     {
-        if (UIManager.Instance.CurrentClickType == UIManager.ClickType.REPAIR)
+        if (!IsInAssets)
         {
-            GameLogicManager.Instance.TryRepair(CardData);
-        }
-        else
-        {
-            GameLogicManager.Instance.Scrap(CardData);
-        }
 
+            if (UIManager.Instance.CurrentClickType == UIManager.ClickType.REPAIR)
+            {
+                GameLogicManager.Instance.TryRepair(CardData);
+            }
+            else
+            {
+                GameLogicManager.Instance.Scrap(CardData);
+            }
+        }
+        else if (!CardData.IsTapped && CardData.OnAction.Length > 0)
+        {
+            if (GameLogicManager.Instance.TapCard(CardData))
+            {
+                transform.Rotate(0, 0, 90, Space.Self);
+            }
+        }
     }
 }

@@ -40,6 +40,7 @@ public class GameLoopManager : Manager<GameLoopManager>
         GameLogicManager.Instance.ResetActions();
         GameLogicManager.Instance.MoveRiver();
         UIManager.Instance.UpdateResources();
+        UIManager.Instance.DrawAssets();
         // we can do some delay before this
         CurrentPhase = GamePhase.INPUT;
     }
@@ -52,8 +53,11 @@ public class GameLoopManager : Manager<GameLoopManager>
     void CleanUp()
     {
         CurrentPhase = GamePhase.CLEANUP;
-        GameLogicManager.Instance.DiscardResources();
         GameLogicManager.Instance.UntapCards();
+        GameLogicManager.Instance.TriggerEndOfTurnEffects();
+        GameLogicManager.Instance.HappinessUpkeep();
+        GameLogicManager.Instance.DiscardResources();
+        GameLogicManager.Instance.CheckLoseCond();
         // we can do some delay before this
         PreInput();
     }

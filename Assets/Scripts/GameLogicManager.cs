@@ -46,12 +46,15 @@ public class GameLogicManager : Manager<GameLogicManager> {
         // we could display UI here or just do some automatic deduction
 
         // todo refine?
-        IncreaseWood(Mathf.CeilToInt(PlayerResources.Wood / 2f));
-        IncreaseSteel(Mathf.CeilToInt(PlayerResources.Steel / 2f));
-        IncreaseGold(Mathf.CeilToInt(PlayerResources.Gold / 2f));
+        if (PlayerResources.Wood + PlayerResources.Steel + PlayerResources.Gold > PlayerResources.Storage)
+        {
+            IncreaseWood(-Mathf.CeilToInt(PlayerResources.Wood / 2f));
+            IncreaseSteel(-Mathf.CeilToInt(PlayerResources.Steel / 2f));
+            IncreaseGold(-Mathf.CeilToInt(PlayerResources.Gold / 2f));
+        }
     }
-    
-    public void TapCard(Card card)
+
+    public bool TapCard(Card card)
     {
         if (!card.IsTapped && CanUseEffects(card.OnAction) && PlayerResources.Actions > 0)
         {
@@ -59,11 +62,13 @@ public class GameLogicManager : Manager<GameLogicManager> {
             card.IsTapped = true;
             PlayerResources.Actions--;
             UIManager.Instance.UpdateResources();
-        }
 
-        if (PlayerResources.Actions == 0) {
-            GameLoopManager.Instance.NoMoreActions();
+            if (PlayerResources.Actions == 0) {
+                GameLoopManager.Instance.NoMoreActions();
+            }
+            return true;
         }
+        return false;
     }
 
     public void UntapCards() {
@@ -98,6 +103,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerResources.Gold -= effect.GoldCost;
             effect.ApplyEffect();
         }
+        UIManager.Instance.UpdateResources();
     }
 
     public void TriggerEndOfTurnEffects() {
@@ -106,14 +112,11 @@ public class GameLogicManager : Manager<GameLogicManager> {
                 UseEffects(card.OnEndTurn);
             }
         }
-        HappinessUpkeep();
-        DiscardResources();
-
-        CheckLoseCond();
     }
 
     public void HappinessUpkeep() {
         IncreaseHappiness(Mathf.FloorToInt(HAPPINESS_PER_POPULATION * PlayerResources.Population * -1));
+        PlayerResources.Happiness = Mathf.Min(PlayerResources.Happiness, 100);
     }
 
     public void CheckLoseCond() {
@@ -159,7 +162,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             GameLoopManager.Instance.NoMoreActions();
         }
     }
-    
+
     public bool CanRepair(Card card) {
         return (PlayerResources.Wood >= card.RepairWoodCost &&
             PlayerResources.Steel >= card.RepairSteelCost &&
