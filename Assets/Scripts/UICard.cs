@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿        using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -89,6 +89,8 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         UIManager.Instance.ToggleRepairDrop(canRepair);
         pos = transform.position;
         pos.x += e.position.x > Screen.width / 2.0 ? -3.5f : 3.5f;
+        pos.x = Mathf.Clamp(pos.x , -6.25f, 6.17f);
+        pos.y = Mathf.Clamp(pos.y, -1.53f, 1.84f);
         UIManager.Instance.DrawHovered(CardData, pos);
         UIManager.Instance.ToggleTrashDrop(true);
     }
@@ -122,6 +124,8 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
     {
         Vector3 pos = transform.position;
         pos.x += e.position.x > Screen.width / 2.0 ? -3.5f : 3.5f;
+        pos.x = Mathf.Clamp(pos.x , -6.25f, 6.17f);
+        pos.y = Mathf.Clamp(pos.y, -1.53f, 1.84f);
         UIManager.Instance.DrawHovered(CardData, pos);
     }
 

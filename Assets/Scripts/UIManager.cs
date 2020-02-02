@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using System.Linq;
 
 public class UIManager : Manager<UIManager>
 {
@@ -9,6 +10,7 @@ public class UIManager : Manager<UIManager>
     public Transform RiverStart;
     public Transform RiverEnd;
     public Transform StorageStart;
+    public Transform StorageEnd;
     public TextMeshProUGUI ResourcesText;
     public TextMeshProUGUI WoodText;
     public TextMeshProUGUI SteelText;
@@ -24,6 +26,8 @@ public class UIManager : Manager<UIManager>
     public List<GameObject> AssetObjects;
     public GameObject RepairDrop;
     public GameObject TrashDrop;
+
+    public int CurrentAssetIndex = 0;
 
     public enum ClickType
     {
@@ -41,7 +45,7 @@ public class UIManager : Manager<UIManager>
             Destroy(go);
         }
         RiverObjects.Clear();
-        float space = (RiverEnd.position.x - RiverStart.position.x) / 7.0f;
+        float space = (RiverEnd.position.x - RiverStart.position.x) / 6.0f;
         int i = 0;
         List<Card> cardsInBottomRow = IsRiverShown ? GameLogicManager.Instance.PlayerRiver : GameLogicManager.Instance.PlayerObjectives;
         foreach (Card card in cardsInBottomRow)
@@ -69,7 +73,7 @@ public class UIManager : Manager<UIManager>
     {
         TrashDrop.SetActive(toggle);
     }
-    
+
 
     public void DrawAssets()
     {
@@ -78,10 +82,9 @@ public class UIManager : Manager<UIManager>
             Destroy(go);
         }
         AssetObjects.Clear();
-        float space = (RiverEnd.position.x - RiverStart.position.x) / 7.0f;
-
+        float space = (StorageEnd.position.x - StorageStart.position.x) / 5.0f;
         int i = 0;
-        foreach (Card card in GameLogicManager.Instance.PlayerAssets)
+        foreach (Card card in GameLogicManager.Instance.PlayerAssets.Skip(CurrentAssetIndex).Take(6))
         {
             if (card == null)
             {
