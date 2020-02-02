@@ -17,11 +17,13 @@ MonoBehaviour:
   Copies: 2
   Name: Farm
   Image: {fileID: 21300000, guid: 0a92cd77af9726144809c31039a73bea, type: 3}
-  Description: +10 Food/turn
+  Description: +2 Food/turn, 2W->35Food
   OnRepair: []
-  OnAction: []
+  OnAction:
+  - {fileID: 11400000, guid: 47231ed74d744eb479d4e2a97889b63b, type: 2}
+  - {fileID: 11400000, guid: a4813a536613bee41b52fafd868308af, type: 2}
   OnEndTurn:
-  - {fileID: 11400000, guid: e32bf21fbdc3f5048ae0d10f4c11849e, type: 2}
+  - {fileID: 11400000, guid: c3cc418698c3a9f41817854559cb7aae, type: 2}
   ScrapWoodCost: 4
   ScrapSteelCost: 1
   ScrapGoldCost: 2

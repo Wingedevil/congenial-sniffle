@@ -17,9 +17,10 @@ MonoBehaviour:
   Copies: 2
   Name: Berry Garden
   Image: {fileID: 21300000, guid: 69b9b8fe7a320694595dd884f3f9b278, type: 3}
-  Description: +5 Food/turn
+  Description: +1 Food/turn, 2W->30Food
   OnRepair: []
-  OnAction: []
+  OnAction:
+  - {fileID: 11400000, guid: 47231ed74d744eb479d4e2a97889b63b, type: 2}
   OnEndTurn:
   - {fileID: 11400000, guid: a4813a536613bee41b52fafd868308af, type: 2}
   ScrapWoodCost: 2

@@ -17,11 +17,11 @@ MonoBehaviour:
   Copies: 2
   Name: Fountain
   Image: {fileID: 0}
-  Description: Food +2/turn
+  Description: Food +1/turn
   OnRepair: []
   OnAction: []
   OnEndTurn:
-  - {fileID: 11400000, guid: c3cc418698c3a9f41817854559cb7aae, type: 2}
+  - {fileID: 11400000, guid: c3bec3253b59a1045916ff93e27ba497, type: 2}
   ScrapWoodCost: 0
   ScrapSteelCost: 2
   ScrapGoldCost: 0

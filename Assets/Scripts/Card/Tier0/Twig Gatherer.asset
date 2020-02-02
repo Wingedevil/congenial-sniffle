@@ -17,9 +17,10 @@ MonoBehaviour:
   Copies: 1
   Name: Twig Gatherer
   Image: {fileID: 21300000, guid: a07283299ca203645ab4b4f24e62dce4, type: 3}
-  Description: Action +2 Wood
+  Description: Action 25 Food->2 Wood
   OnRepair: []
   OnAction:
+  - {fileID: 11400000, guid: 7a258eb469dfe3040ad294fe3c735f13, type: 2}
   - {fileID: 11400000, guid: 3855e379047e0ab4d9d34a5f6488fe87, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 2

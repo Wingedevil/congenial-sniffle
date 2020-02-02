@@ -20,6 +20,6 @@ MonoBehaviour:
   ChangeSteel: 0
   ChangeGold: 0
   ChangePopulation: 0
-  ChangeHappiness: 0
+  ChangeHappiness: -25
   ChangeRiverSize: 0
   ChangeStorage: 0
