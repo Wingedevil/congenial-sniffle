@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 2
   Copies: 1
   Name: Lumberyard
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: a5eae7ec6a95be44bb4cabccf7c45f60, type: 3}
   Description: Start of turn, +1 Wood
   OnRepair: []
   OnAction: []

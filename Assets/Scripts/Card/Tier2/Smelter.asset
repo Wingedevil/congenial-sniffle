@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 2
   Copies: 1
   Name: Smelter
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: dbdefe3c924393e498332e0eda5f31e9, type: 3}
   Description: Scrap +1 Steel
   OnRepair:
   - {fileID: 11400000, guid: 0bd015e654b9cce47b7be81f3ddc80d1, type: 2}

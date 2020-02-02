@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 2
   Copies: 1
   Name: Welder
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 4ce3f665885838a4998fa3064c9542e0, type: 3}
   Description: Steel 1 less to repair
   OnRepair:
   - {fileID: 11400000, guid: be7453751f3112643a07794af20bdd0d, type: 2}
