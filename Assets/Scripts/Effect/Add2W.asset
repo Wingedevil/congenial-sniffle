@@ -16,7 +16,7 @@ MonoBehaviour:
   SteelCost: 0
   GoldCost: 0
   ActionCost: 0
-  ChangeWood: 0
+  ChangeWood: 2
   ChangeSteel: 0
   ChangeGold: 0
   ChangePopulation: 0

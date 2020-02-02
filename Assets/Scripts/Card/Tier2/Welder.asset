@@ -12,21 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: Welder
   m_EditorClassIdentifier: 
-  ID: 0
-  Tier: 0
-  Copies: 2
-  Name: 
+  ID: 25
+  Tier: 2
+  Copies: 1
+  Name: Welder
   Image: {fileID: 0}
-  Description: 
-  OnRepair: []
+  Description: Steel 1 less to repair
+  OnRepair:
+  - {fileID: 11400000, guid: be7453751f3112643a07794af20bdd0d, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 0
-  ScrapSteelCost: 0
-  ScrapGoldCost: 0
-  PopulationRequirement: 0
+  ScrapSteelCost: 3
+  ScrapGoldCost: 3
+  PopulationRequirement: 50
   RepairWoodCost: 0
-  RepairSteelCost: 0
-  RepairGoldCost: 0
+  RepairSteelCost: 14
+  RepairGoldCost: 8
   IsTapped: 0
   Scrappable: 1

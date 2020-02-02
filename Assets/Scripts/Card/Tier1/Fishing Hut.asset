@@ -12,21 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: Fishing Hut
   m_EditorClassIdentifier: 
-  ID: 0
-  Tier: 0
-  Copies: 2
-  Name: 
+  ID: 11
+  Tier: 1
+  Copies: 1
+  Name: Fishing Hut
   Image: {fileID: 0}
-  Description: 
-  OnRepair: []
+  Description: River Size +1, Food +5/turn
+  OnRepair:
+  - {fileID: 11400000, guid: 2e2154d7d9573494ab172977617c1243, type: 2}
   OnAction: []
-  OnEndTurn: []
-  ScrapWoodCost: 0
-  ScrapSteelCost: 0
+  OnEndTurn:
+  - {fileID: 11400000, guid: a4813a536613bee41b52fafd868308af, type: 2}
+  ScrapWoodCost: 2
+  ScrapSteelCost: 2
   ScrapGoldCost: 0
-  PopulationRequirement: 0
-  RepairWoodCost: 0
-  RepairSteelCost: 0
+  PopulationRequirement: 20
+  RepairWoodCost: 8
+  RepairSteelCost: 6
   RepairGoldCost: 0
   IsTapped: 0
   Scrappable: 1

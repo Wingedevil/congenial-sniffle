@@ -12,21 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: Lumberyard
   m_EditorClassIdentifier: 
-  ID: 0
-  Tier: 0
-  Copies: 2
-  Name: 
+  ID: 18
+  Tier: 2
+  Copies: 1
+  Name: Lumberyard
   Image: {fileID: 0}
-  Description: 
+  Description: Start of turn, +1 Wood
   OnRepair: []
   OnAction: []
-  OnEndTurn: []
+  OnEndTurn:
+  - {fileID: 11400000, guid: 6f64db8f0d5e93c4bb235cc38fc9a485, type: 2}
   ScrapWoodCost: 0
-  ScrapSteelCost: 0
-  ScrapGoldCost: 0
-  PopulationRequirement: 0
-  RepairWoodCost: 0
-  RepairSteelCost: 0
-  RepairGoldCost: 0
+  ScrapSteelCost: 2
+  ScrapGoldCost: 2
+  PopulationRequirement: 40
+  RepairWoodCost: 6
+  RepairSteelCost: 5
+  RepairGoldCost: 3
   IsTapped: 0
   Scrappable: 1

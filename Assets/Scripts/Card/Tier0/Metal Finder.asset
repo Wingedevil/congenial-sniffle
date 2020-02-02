@@ -17,17 +17,17 @@ MonoBehaviour:
   Copies: 1
   Name: Metal Finder
   Image: {fileID: 21300000, guid: 1a279e05ea3777e4f9cc100c33159727, type: 3}
-  Description: Scrap +1 Steel
+  Description: 'Action: +2 Steel'
   OnRepair:
-  - {fileID: 11400000, guid: 0bd015e654b9cce47b7be81f3ddc80d1, type: 2}
+  - {fileID: 11400000, guid: 635d45a90dad81f4c97b71ae7024248b, type: 2}
   OnAction: []
   OnEndTurn: []
   ScrapWoodCost: 0
-  ScrapSteelCost: 1
+  ScrapSteelCost: 2
   ScrapGoldCost: 0
-  PopulationRequirement: 1
+  PopulationRequirement: 10
   RepairWoodCost: 0
   RepairSteelCost: 4
-  RepairGoldCost: 1
+  RepairGoldCost: 0
   IsTapped: 0
   Scrappable: 1

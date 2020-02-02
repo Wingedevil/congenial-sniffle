@@ -17,16 +17,18 @@ MonoBehaviour:
   Copies: 2
   Name: Hotel
   Image: {fileID: 21300000, guid: 896ccaf927e7ab544a7d1d71ad0c9333, type: 3}
-  Description: Population +10
+  Description: Population +6, Food +5/turn
   OnRepair:
-  - {fileID: 11400000, guid: f3bb2a6a64488d445a49dab88c9de1ac, type: 2}
+  - {fileID: 11400000, guid: e6b1bbc26df38114081405c7c0f8bf58, type: 2}
   OnAction: []
-  OnEndTurn: []
-  ScrapWoodCost: 1
-  ScrapSteelCost: 2
-  ScrapGoldCost: 1
-  RepairWoodCost: 4
-  RepairSteelCost: 10
-  RepairGoldCost: 3
+  OnEndTurn:
+  - {fileID: 11400000, guid: a4813a536613bee41b52fafd868308af, type: 2}
+  ScrapWoodCost: 0
+  ScrapSteelCost: 3
+  ScrapGoldCost: 2
+  PopulationRequirement: 50
+  RepairWoodCost: 6
+  RepairSteelCost: 12
+  RepairGoldCost: 8
   IsTapped: 0
   Scrappable: 1

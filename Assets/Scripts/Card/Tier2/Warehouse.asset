@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 20
   Tier: 2
-  Copies: 2
+  Copies: 1
   Name: Warehouse
   Image: {fileID: 21300000, guid: 7e7f135a646a2ac42b7c92976748d6de, type: 3}
   Description: Storage +5
@@ -22,11 +22,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d871d558c1b483846b6f028d300edaaf, type: 2}
   OnAction: []
   OnEndTurn: []
-  ScrapWoodCost: 2
-  ScrapSteelCost: 1
+  ScrapWoodCost: 3
+  ScrapSteelCost: 3
   ScrapGoldCost: 0
-  PopulationRequirement: 2
-  RepairWoodCost: 14
+  PopulationRequirement: 30
+  RepairWoodCost: 8
   RepairSteelCost: 8
   RepairGoldCost: 0
   IsTapped: 0

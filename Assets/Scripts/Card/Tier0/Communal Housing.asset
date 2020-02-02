@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: Communal Housing
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 4
   Tier: 0
   Copies: 2
-  Name: 
+  Name: Communal Housing
   Image: {fileID: 0}
-  Description: 
-  OnRepair: []
+  Description: +8 Population
+  OnRepair:
+  - {fileID: 11400000, guid: cb812a76d7bfe524ab4c27c6a9ec3b31, type: 2}
   OnAction: []
   OnEndTurn: []
-  ScrapWoodCost: 0
+  ScrapWoodCost: 3
   ScrapSteelCost: 0
   ScrapGoldCost: 0
   PopulationRequirement: 0
-  RepairWoodCost: 0
+  RepairWoodCost: 6
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0

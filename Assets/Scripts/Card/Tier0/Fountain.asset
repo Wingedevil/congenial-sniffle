@@ -12,21 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: Fountain
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 8
   Tier: 0
   Copies: 2
-  Name: 
+  Name: Fountain
   Image: {fileID: 0}
-  Description: 
+  Description: Food +2/turn
   OnRepair: []
   OnAction: []
-  OnEndTurn: []
+  OnEndTurn:
+  - {fileID: 11400000, guid: c3cc418698c3a9f41817854559cb7aae, type: 2}
   ScrapWoodCost: 0
-  ScrapSteelCost: 0
+  ScrapSteelCost: 2
   ScrapGoldCost: 0
-  PopulationRequirement: 0
-  RepairWoodCost: 0
-  RepairSteelCost: 0
+  PopulationRequirement: 10
+  RepairWoodCost: 4
+  RepairSteelCost: 4
   RepairGoldCost: 0
   IsTapped: 0
   Scrappable: 1

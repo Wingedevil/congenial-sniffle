@@ -12,20 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e8e1509a70dd408939bf0e3c0be3b, type: 3}
   m_Name: Scavenger's Hut
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 2
   Tier: 0
   Copies: 2
-  Name: 
+  Name: Scavenger's Hut
   Image: {fileID: 0}
-  Description: 
-  OnRepair: []
+  Description: Pop +2, +2 Food/turn
+  OnRepair:
+  - {fileID: 11400000, guid: 046377c2b38e57d438aa3a4b600d51f7, type: 2}
+  - {fileID: 11400000, guid: 046377c2b38e57d438aa3a4b600d51f7, type: 2}
   OnAction: []
-  OnEndTurn: []
-  ScrapWoodCost: 0
+  OnEndTurn:
+  - {fileID: 11400000, guid: c3cc418698c3a9f41817854559cb7aae, type: 2}
+  ScrapWoodCost: 2
   ScrapSteelCost: 0
   ScrapGoldCost: 0
   PopulationRequirement: 0
-  RepairWoodCost: 0
+  RepairWoodCost: 6
   RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0

@@ -17,15 +17,15 @@ MonoBehaviour:
   Copies: 1
   Name: Minor Matter Transmuter
   Image: {fileID: 21300000, guid: 82150f7f986e9884e911ef876687774c, type: 3}
-  Description: Transmute 2G to 1S
+  Description: Transmute 2S to 1G
   OnRepair: []
   OnAction:
-  - {fileID: 11400000, guid: e3090eef23861dd4f8342c502e267cb1, type: 2}
+  - {fileID: 11400000, guid: a1d1ac6d0b3214749ad451b960d1dcfd, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 0
   ScrapSteelCost: 0
   ScrapGoldCost: 2
-  PopulationRequirement: 4
+  PopulationRequirement: 10
   RepairWoodCost: 0
   RepairSteelCost: 0
   RepairGoldCost: 4

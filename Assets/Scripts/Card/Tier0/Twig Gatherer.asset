@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   Tier: 0
-  Copies: 2
+  Copies: 1
   Name: Twig Gatherer
   Image: {fileID: 21300000, guid: a07283299ca203645ab4b4f24e62dce4, type: 3}
-  Description: Scrap +1 Wood
-  OnRepair:
-  - {fileID: 11400000, guid: 5987d6bf9d5ad104dbc20eaa2bb9cea2, type: 2}
-  OnAction: []
+  Description: Action +2 Wood
+  OnRepair: []
+  OnAction:
+  - {fileID: 11400000, guid: 3855e379047e0ab4d9d34a5f6488fe87, type: 2}
   OnEndTurn: []
-  ScrapWoodCost: 1
+  ScrapWoodCost: 2
   ScrapSteelCost: 0
   ScrapGoldCost: 0
-  PopulationRequirement: 2
+  PopulationRequirement: 0
   RepairWoodCost: 4
   RepairSteelCost: 0
   RepairGoldCost: 0

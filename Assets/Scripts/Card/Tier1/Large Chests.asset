@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 10
   Tier: 1
-  Copies: 1
+  Copies: 2
   Name: Large Chests
   Image: {fileID: 21300000, guid: 3debc417cc3a1ec428a7b105ead14f39, type: 3}
-  Description: Storage +3
+  Description: Storage +2
   OnRepair:
-  - {fileID: 11400000, guid: 4bacacc670d8740498dff4a777f7e777, type: 2}
+  - {fileID: 11400000, guid: e3347ccd05d4a80478229095323adbdb, type: 2}
   OnAction: []
   OnEndTurn: []
-  ScrapWoodCost: 2
+  ScrapWoodCost: 3
   ScrapSteelCost: 0
   ScrapGoldCost: 0
-  RepairWoodCost: 6
-  RepairSteelCost: 1
+  PopulationRequirement: 10
+  RepairWoodCost: 7
+  RepairSteelCost: 0
   RepairGoldCost: 0
   IsTapped: 0
   Scrappable: 1
