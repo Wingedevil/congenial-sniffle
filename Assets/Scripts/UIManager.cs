@@ -67,7 +67,7 @@ public class UIManager : Manager<UIManager>
             ++i;
         }
         Vector3 linePos = Line.transform.position;
-        linePos.x = 4 * Mathf.Max(GameLogicManager.Instance.PlayerResources.RiverSize - 3, 0);
+        linePos.x = 3 * Mathf.Max(GameLogicManager.Instance.PlayerResources.RiverSize - 3, 0);
         Line.transform.position = linePos;
     }
 
