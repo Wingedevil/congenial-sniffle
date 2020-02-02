@@ -25,7 +25,7 @@ MonoBehaviour:
   ScrapWoodCost: 1
   ScrapSteelCost: 0
   ScrapGoldCost: 1
-  PopulationRequirement: 10
+  PopulationRequirement: 7
   RepairWoodCost: 4
   RepairSteelCost: 1
   RepairGoldCost: 1
