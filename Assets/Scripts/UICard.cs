@@ -47,6 +47,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
             ScrapSteelCost.text = "-";
             ScrapGoldCost.text = "-";
         }
+        transform.parent = UIManager.Instance.gameObject.transform;
         OriginalPosition = transform.position;
     }
 
@@ -72,6 +73,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
             }
         }
         transform.position = OriginalPosition;
+        transform.parent = UIManager.Instance.gameObject.transform;
         UIManager.Instance.ToggleRepairDrop(false);
         UIManager.Instance.ToggleTrashDrop(false);
         UIManager.Instance.DisableHovered();
@@ -83,7 +85,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         Vector3 pos = transform.position;
         pos.x = Camera.main.ScreenToWorldPoint(e.position).x;
         pos.y = Camera.main.ScreenToWorldPoint(e.position).y;
-        pos.z = -1.1f;
+        pos.z = -2f;
         transform.position = pos;
         bool canRepair = GameLogicManager.Instance.CanRepair(CardData);
 
@@ -94,6 +96,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         pos.y = Mathf.Clamp(pos.y, -1.53f, 1.84f);
         UIManager.Instance.DrawHovered(CardData, pos);
         UIManager.Instance.ToggleTrashDrop(CardData.Scrappable);
+        transform.parent = UIManager.Instance.CardCanvas.transform;
     }
 
     public void OnPointerClick(PointerEventData data)

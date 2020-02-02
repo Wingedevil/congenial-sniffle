@@ -22,6 +22,8 @@ public class UIManager : Manager<UIManager>
 
     public HoverCard Hover;
 
+    public GameObject CardCanvas;
+
 
     public List<GameObject> RiverObjects;
     public List<GameObject> AssetObjects;
