@@ -30,6 +30,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
     {
         CardData.NotUnityUpdate();
         CardImage.sprite = CardData.Image == null ? DefaultSprite : CardData.Image;
+        if (IsInAssets) return;
         RepairWoodCost.text = CardData.RepairWoodCost.ToString();
         RepairSteelCost.text = CardData.RepairSteelCost.ToString();
         RepairGoldCost.text = CardData.RepairGoldCost.ToString();

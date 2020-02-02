@@ -7,6 +7,7 @@ using System.Linq;
 public class UIManager : Manager<UIManager>
 {
     public GameObject CardPrefab;
+    public GameObject AssetPrefab;
     public Transform RiverStart;
     public Transform RiverEnd;
     public Transform StorageStart;
@@ -91,7 +92,7 @@ public class UIManager : Manager<UIManager>
                 ++i;
                 continue;
             }
-            GameObject go = GameObject.Instantiate(CardPrefab, StorageStart.position + Vector3.right * space * i, Quaternion.identity, transform);
+            GameObject go = GameObject.Instantiate(AssetPrefab, StorageStart.position + Vector3.right * space * i, Quaternion.identity, transform);
             AssetObjects.Add(go);
             UICard uiCard = go.GetComponent<UICard>();
             uiCard.CardData = card;

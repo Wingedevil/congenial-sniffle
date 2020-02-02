@@ -16,6 +16,10 @@ public class MoveAsset : MonoBehaviour, IPointerClickHandler
         {
             spriteRenderer.enabled = UIManager.Instance.CurrentAssetIndex > 0;
         }
+        else
+        {
+            spriteRenderer.enabled= UIManager.Instance.CurrentAssetIndex + 6 < GameLogicManager.Instance.PlayerAssets.Count;
+        }
 
     }
     public void OnPointerClick(PointerEventData data)
@@ -31,7 +35,7 @@ public class MoveAsset : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            if (ui.CurrentAssetIndex + 6 <= gm.PlayerAssets.Count)
+            if (ui.CurrentAssetIndex + 6 < gm.PlayerAssets.Count)
             {
                 ui.CurrentAssetIndex += 6;
             }
