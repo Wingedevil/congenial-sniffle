@@ -22,8 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e2154d7d9573494ab172977617c1243, type: 2}
   OnAction: []
   OnEndTurn: []
-  ScrapWoodCost: 0
-  ScrapSteelCost: 2
+  ScrapWoodCost: 2
+  ScrapSteelCost: 0
   ScrapGoldCost: 0
   PopulationRequirement: 10
   RepairWoodCost: 4
