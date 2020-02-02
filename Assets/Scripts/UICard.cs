@@ -68,7 +68,11 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
             }
             if (h.gameObject.tag == "Trash")
             {
-                if (GameLogicManager.Instance.Scrap(CardData))
+                Vector3 pos = transform.position;
+                pos.x = Camera.main.ScreenToWorldPoint(eventData.position).x;
+                pos.y = Camera.main.ScreenToWorldPoint(eventData.position).y;
+                pos.z = -2f;
+                if (GameLogicManager.Instance.Scrap(CardData, pos))
                 {
                     return;
                 }

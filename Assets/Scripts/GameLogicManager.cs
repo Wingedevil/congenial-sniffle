@@ -202,7 +202,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerResources.Gold >= card.RepairGoldCost &&
             PlayerResources.Population >= card.PopulationRequirement);
     }
-    public bool Scrap(Card card)
+    public bool Scrap(Card card, Vector3 pos)
     {
         // Assert.IsTrue(PlayerRiver.Contains(card));
         if (card.Scrappable && PlayerResources.Actions > 0)
@@ -220,6 +220,10 @@ public class GameLogicManager : Manager<GameLogicManager> {
             UIManager.Instance.ToggleTrashDrop(false);
             UIManager.Instance.DisableHovered();
 
+            ParticleManager.Instance.Burst(card.ScrapWoodCost +
+            PlayerUpgrades.WoodScrapBonus,
+            card.ScrapSteelCost + PlayerUpgrades.SteelScrapBonus,
+            card.ScrapGoldCost + PlayerUpgrades.GoldScrapBonus, pos);
             if (PlayerResources.Actions == 0)
             {
                 GameLoopManager.Instance.NoMoreActions();
