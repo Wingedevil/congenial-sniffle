@@ -136,7 +136,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             PlayerResources.Wood -= card.RepairWoodCost;
             PlayerResources.Steel -= card.RepairSteelCost;
             PlayerResources.Gold -= card.RepairGoldCost;
-            PlayerResources.PopulationAtWork += card.PopulationRequirement;
+            //PlayerResources.PopulationAtWork += card.PopulationRequirement;
             UseEffects(card.OnRepair);
 
             if (card is Hut) {
@@ -175,7 +175,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
         return (PlayerResources.Wood >= card.RepairWoodCost &&
             PlayerResources.Steel >= card.RepairSteelCost &&
             PlayerResources.Gold >= card.RepairGoldCost &&
-            PlayerResources.Population >= card.PopulationRequirement + PlayerResources.PopulationAtWork);
+            PlayerResources.Population >= card.PopulationRequirement);
     }
     public bool Scrap(Card card)
     {
