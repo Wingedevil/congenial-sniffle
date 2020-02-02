@@ -17,14 +17,16 @@ MonoBehaviour:
   Copies: 2
   Name: Treasury
   Image: {fileID: 0}
-  Description: +10 Storage
+  Description: +10 Storage, +1 Gold per Turn
   OnRepair: []
   OnAction:
   - {fileID: 11400000, guid: 783394bd37396884f8b5f5e567b656b0, type: 2}
-  OnEndTurn: []
+  OnEndTurn:
+  - {fileID: 11400000, guid: a864b1014a951c34e814e14cb4608290, type: 2}
   ScrapWoodCost: 0
   ScrapSteelCost: 0
   ScrapGoldCost: 0
+  PopulationRequirement: 0
   RepairWoodCost: 12
   RepairSteelCost: 18
   RepairGoldCost: 20

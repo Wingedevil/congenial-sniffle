@@ -17,14 +17,16 @@ MonoBehaviour:
   Copies: 2
   Name: Train Station
   Image: {fileID: 0}
-  Description: Get +1 W and +1 S each turn
+  Description: Get +2 W and +2 S each turn
   OnRepair: []
   OnAction: []
   OnEndTurn:
   - {fileID: 11400000, guid: d6d0fa70e83d1314b88c224e851c3de9, type: 2}
+  - {fileID: 11400000, guid: d6d0fa70e83d1314b88c224e851c3de9, type: 2}
   ScrapWoodCost: 0
   ScrapSteelCost: 0
   ScrapGoldCost: 0
+  PopulationRequirement: 0
   RepairWoodCost: 18
   RepairSteelCost: 18
   RepairGoldCost: 10

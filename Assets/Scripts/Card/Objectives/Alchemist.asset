@@ -17,14 +17,15 @@ MonoBehaviour:
   Copies: 2
   Name: Alchemist
   Image: {fileID: 0}
-  Description: Transmute 1S to 1G
+  Description: Transmute 1S to 2G
   OnRepair: []
   OnAction:
-  - {fileID: 11400000, guid: cf9461be4f23fc144ada627895ad548a, type: 2}
+  - {fileID: 11400000, guid: f5f5add3c9d64624f9e0aa338fa3e544, type: 2}
   OnEndTurn: []
   ScrapWoodCost: 0
   ScrapSteelCost: 0
   ScrapGoldCost: 0
+  PopulationRequirement: 0
   RepairWoodCost: 15
   RepairSteelCost: 12
   RepairGoldCost: 12
