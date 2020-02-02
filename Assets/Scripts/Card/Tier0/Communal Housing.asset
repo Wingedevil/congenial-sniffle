@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 4
   Name: Communal Housing
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: a935a6dc22e7d0f4f976177c9cce500c, type: 3}
   Description: +8 Population
   OnRepair:
   - {fileID: 11400000, guid: cb812a76d7bfe524ab4c27c6a9ec3b31, type: 2}

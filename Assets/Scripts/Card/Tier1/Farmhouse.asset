@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 1
   Copies: 2
   Name: Farmhouse
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: c764f8121b5b90740b310cf963bd74bd, type: 3}
   Description: Pop +5, +2 Food/turn
   OnRepair:
   - {fileID: 11400000, guid: 64baa9e663b1d664fadcc9c1fe830a9e, type: 2}

@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 2
   Name: Train Station
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: af5ed5ca557cc3a43b54d3ced46ef097, type: 3}
   Description: Get +2 W and +2 S each turn
   OnRepair: []
   OnAction: []

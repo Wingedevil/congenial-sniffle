@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 2
   Name: Treasury
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 7594930b93029eb44befdfa0ddd65111, type: 3}
   Description: +10 Storage, +1 Gold per Turn
   OnRepair: []
   OnAction:

@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 1
   Name: Hunter's Lodge
-  Image: {fileID: 21300000, guid: cbe5336398017874f8e7dfcfbba11504, type: 3}
+  Image: {fileID: 21300000, guid: 40fda741c36f0cc45b266e0792cb4a40, type: 3}
   Description: 'Active: 2W -> 25 Food'
   OnRepair: []
   OnAction:

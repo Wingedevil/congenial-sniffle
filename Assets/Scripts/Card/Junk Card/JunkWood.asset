@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 2
   Name: Junk Wood
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 8d8abf3b0c367964f95b4ef3554d47bc, type: 3}
   Description: It's just junk
   OnRepair: []
   OnAction: []
@@ -24,6 +24,7 @@ MonoBehaviour:
   ScrapWoodCost: 1
   ScrapSteelCost: 0
   ScrapGoldCost: 0
+  PopulationRequirement: 0
   RepairWoodCost: 99
   RepairSteelCost: 99
   RepairGoldCost: 99

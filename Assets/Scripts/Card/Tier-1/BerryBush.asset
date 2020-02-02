@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 0
   Name: Berry Bush
-  Image: {fileID: 21300000, guid: 4ecea3d97a0cd7e4ca014f7cc67af868, type: 3}
+  Image: {fileID: 21300000, guid: a1178d8f4e9cc624c895bc8f1cac5bb5, type: 3}
   Description: 'Active: 1W -> 15 Food'
   OnRepair: []
   OnAction:

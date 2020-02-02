@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 2
   Copies: 1
   Name: Scrapyard
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 68f552c371511ef4d84b853faa921d3b, type: 3}
   Description: Start of turn, +1 Steel
   OnRepair: []
   OnAction: []

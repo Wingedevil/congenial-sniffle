@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 2
   Name: Alchemist
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: a55f3e2307f22d547bdbd0a266677aa3, type: 3}
   Description: Transmute 1S to 2G
   OnRepair: []
   OnAction:

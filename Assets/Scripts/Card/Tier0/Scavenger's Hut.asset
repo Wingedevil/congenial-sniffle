@@ -16,7 +16,7 @@ MonoBehaviour:
   Tier: 0
   Copies: 4
   Name: Scavenger's Hut
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 7e9ac328516c7af4abbd7f68a2d5ee3b, type: 3}
   Description: Pop +2, +2 Food/turn
   OnRepair:
   - {fileID: 11400000, guid: 046377c2b38e57d438aa3a4b600d51f7, type: 2}
