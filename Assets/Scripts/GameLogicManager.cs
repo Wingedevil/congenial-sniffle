@@ -5,8 +5,8 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 public class GameLogicManager : Manager<GameLogicManager> {
-    public const float HAPPINESS_PER_POPULATION = 0.5f; // actually resources
-    public const int OBJECTIVES_REQUIRED = 4; // actually resources
+    public const float HAPPINESS_PER_POPULATION = 0.6f; // actually resources
+    public const int OBJECTIVES_REQUIRED = 1;
     public const int NUMBER_OF_OBJECTIVES = 4;
 
     public int HutsBuilt = 0;
@@ -189,6 +189,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
                 GameLoopManager.Instance.NoMoreActions();
             }
             SoundManager.Instance.PlayRepair();
+            CheckWinCond();
             return true;
         }
 

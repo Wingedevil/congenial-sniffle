@@ -120,7 +120,7 @@ public class UIManager : Manager<UIManager>
         GoldText.text = resources.Gold.ToString() + "/" + resources.Storage.ToString();
         TurnText.text = "Day: " + GameLoopManager.Instance.Turn.ToString();
         PopText.text = /*(resources.Population - resources.PopulationAtWork).ToString() + "/" + */resources.Population.ToString();
-        HappyText.text = resources.Happiness.ToString();
+        HappyText.text = Mathf.FloorToInt(resources.Happiness).ToString();
         // ResourcesText.text = string.Format("W: {0}, S: {1}, G: {2}, Actions: {3}, River Size: {4}, Pop: {5}, Happy: {8} Turn: {6}, Click: {7}, Bottom Row: {9}",
         //     resources.Wood,
         //     resources.Steel,
