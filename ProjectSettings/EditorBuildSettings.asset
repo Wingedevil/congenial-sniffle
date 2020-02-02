@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 07d817fad68bf98459f03a25fd76ba38
+  - enabled: 1
+    path: Assets/Scenes/CombatTest.unity
+    guid: 5b44a54ab76a96c45bb5edd02b9ffc0c
+  - enabled: 1
+    path: Assets/Scenes/MainGameplayScene.unity
+    guid: 174c825d79ba9ae4aaf824a4118d50f3
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 463306b57c2c6784e9009cd6e42d2e81
   m_configObjects: {}
