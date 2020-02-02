@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 23
   Tier: 2
-  Copies: 2
+  Copies: 4
   Name: Hotel
   Image: {fileID: 21300000, guid: 896ccaf927e7ab544a7d1d71ad0c9333, type: 3}
   Description: Population +6, Food +5/turn
@@ -26,7 +26,7 @@ MonoBehaviour:
   ScrapWoodCost: 0
   ScrapSteelCost: 3
   ScrapGoldCost: 2
-  PopulationRequirement: 50
+  PopulationRequirement: 25
   RepairWoodCost: 6
   RepairSteelCost: 12
   RepairGoldCost: 8

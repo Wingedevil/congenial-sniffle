@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   Tier: 0
-  Copies: 2
+  Copies: 4
   Name: Scavenger's Hut
   Image: {fileID: 0}
   Description: Pop +2, +2 Food/turn

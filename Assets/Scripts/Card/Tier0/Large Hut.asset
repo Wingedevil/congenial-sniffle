@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 9
   Tier: 0
-  Copies: 2
+  Copies: 4
   Name: Large Hut
   Image: {fileID: 21300000, guid: 42efef27a2a7b2d4c8cf257b60bb8b07, type: 3}
   Description: Population +6
@@ -25,6 +25,7 @@ MonoBehaviour:
   ScrapWoodCost: 2
   ScrapSteelCost: 0
   ScrapGoldCost: 0
+  PopulationRequirement: 0
   RepairWoodCost: 5
   RepairSteelCost: 0
   RepairGoldCost: 0

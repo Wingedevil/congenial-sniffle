@@ -17,12 +17,12 @@ MonoBehaviour:
   Copies: 1
   Name: Harbour
   Image: {fileID: 0}
-  Description: River Size +1, Food +5/turn
+  Description: River Size +1, Food +2/turn
   OnRepair:
   - {fileID: 11400000, guid: 2e2154d7d9573494ab172977617c1243, type: 2}
   OnAction: []
   OnEndTurn:
-  - {fileID: 11400000, guid: a4813a536613bee41b52fafd868308af, type: 2}
+  - {fileID: 11400000, guid: c3cc418698c3a9f41817854559cb7aae, type: 2}
   ScrapWoodCost: 2
   ScrapSteelCost: 3
   ScrapGoldCost: 1

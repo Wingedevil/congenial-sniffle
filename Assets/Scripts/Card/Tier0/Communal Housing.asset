@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   Tier: 0
-  Copies: 2
+  Copies: 4
   Name: Communal Housing
   Image: {fileID: 0}
   Description: +8 Population

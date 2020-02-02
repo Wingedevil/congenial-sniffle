@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   Tier: 0
-  Copies: 3
+  Copies: 2
   Name: Ramshackle Docks
   Image: {fileID: 21300000, guid: af0af7f7952948244986ea8fe0f44623, type: 3}
   Description: River Size +1

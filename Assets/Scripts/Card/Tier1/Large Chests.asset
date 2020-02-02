@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 10
   Tier: 1
-  Copies: 2
+  Copies: 3
   Name: Large Chests
   Image: {fileID: 21300000, guid: 3debc417cc3a1ec428a7b105ead14f39, type: 3}
   Description: Storage +2
