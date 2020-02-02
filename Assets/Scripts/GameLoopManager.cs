@@ -61,6 +61,7 @@ public class GameLoopManager : Manager<GameLoopManager>
         GameLogicManager.Instance.DiscardResources();
         GameLogicManager.Instance.CheckLoseCond();
         // we can do some delay before this
+        SoundManager.Instance.PlayTick();
         PreInput();
     }
 }

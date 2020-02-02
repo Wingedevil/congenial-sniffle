@@ -165,6 +165,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             {
                 GameLoopManager.Instance.NoMoreActions();
             }
+            SoundManager.Instance.PlayRepair();
             return true;
         }
 
@@ -199,6 +200,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
             {
                 GameLoopManager.Instance.NoMoreActions();
             }
+            SoundManager.Instance.PlayScrap();
             return true;
         }
         return false;
