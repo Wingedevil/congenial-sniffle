@@ -78,6 +78,7 @@ public class UIManager : Manager<UIManager>
             Destroy(go);
         }
         AssetObjects.Clear();
+        float space = (RiverEnd.position.x - RiverStart.position.x) / 7.0f;
 
         int i = 0;
         foreach (Card card in GameLogicManager.Instance.PlayerAssets)
@@ -87,7 +88,7 @@ public class UIManager : Manager<UIManager>
                 ++i;
                 continue;
             }
-            GameObject go = GameObject.Instantiate(CardPrefab, StorageStart.position + Vector3.right * 1.8f * i, Quaternion.identity, transform);
+            GameObject go = GameObject.Instantiate(CardPrefab, StorageStart.position + Vector3.right * space * i, Quaternion.identity, transform);
             AssetObjects.Add(go);
             UICard uiCard = go.GetComponent<UICard>();
             uiCard.CardData = card;
