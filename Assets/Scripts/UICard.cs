@@ -24,6 +24,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
     // Start is called before the first frame update
     void Start()
     {
+        OriginalPosition = transform.position;
         UpdateCardData();
     }
     public void UpdateCardData()
@@ -101,26 +102,9 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
 
     public void OnPointerClick(PointerEventData data)
     {
-        // if (!IsInAssets)
-        // {
-        //     if (UIManager.Instance.CurrentClickType == UIManager.ClickType.REPAIR)
-        //     {
-        //         GameLogicManager.Instance.TryRepair(CardData);
-        //     }
-        //     else
-        //     {
-        //         if (CardData.Scrappable)
-        //         {
-        //             GameLogicManager.Instance.Scrap(CardData);
-        //         }
-        //     }
-        // } else
         if (IsInAssets && !CardData.IsTapped && CardData.OnAction.Length > 0)
         {
-            if (GameLogicManager.Instance.TapCard(CardData))
-            {
-                transform.Rotate(0, 0, 90, Space.Self);
-            }
+            GameLogicManager.Instance.TapCard(CardData);
         }
     }
 
