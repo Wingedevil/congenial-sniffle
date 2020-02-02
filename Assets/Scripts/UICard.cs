@@ -92,7 +92,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         pos.x = Mathf.Clamp(pos.x , -6.25f, 6.17f);
         pos.y = Mathf.Clamp(pos.y, -1.53f, 1.84f);
         UIManager.Instance.DrawHovered(CardData, pos);
-        UIManager.Instance.ToggleTrashDrop(true);
+        UIManager.Instance.ToggleTrashDrop(CardData.Scrappable);
     }
 
     public void OnPointerClick(PointerEventData data)
