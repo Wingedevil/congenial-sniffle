@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 public class GameLogicManager : Manager<GameLogicManager> {
     public const float HAPPINESS_PER_POPULATION = 0.5f; // actually resources
+    public const int OBJECTIVES_REQUIRED = 4; // actually resources
     public const int NUMBER_OF_OBJECTIVES = 4;
 
     public int HutsBuilt = 0;
@@ -13,6 +15,8 @@ public class GameLogicManager : Manager<GameLogicManager> {
     public List<Card> PlayerAssets;
     public List<Card> PlayerRiver = new List<Card>();
     public List<Card> PlayerObjectives;
+
+    private int objectivesBuilt = 0;
 
     public void PopulateObjectives() {
         for (int i = 0; i < NUMBER_OF_OBJECTIVES; ++i) {
@@ -104,17 +108,34 @@ public class GameLogicManager : Manager<GameLogicManager> {
     }
 
     public void TriggerEndOfTurnEffects() {
-        Debug.Log("Free Pop: " + (PlayerResources.Population - PlayerResources.PopulationAtWork));
+        // Debug.Log("Free Pop: " + (PlayerResources.Population - PlayerResources.PopulationAtWork));
         foreach (Card card in PlayerAssets) {
             if (CanUseEffects(card.OnEndTurn)) {
                 UseEffects(card.OnEndTurn);
             }
+        }
+
+        if (PlayerResources.Population >= 20) {
+            PlayerResources.Wood -= -1;
+        }
+        if (PlayerResources.Population >= 30) {
+            PlayerResources.Steel -= -1;
+        }
+        if (PlayerResources.Population >= 40) {
+            PlayerResources.Gold -= -1;
         }
     }
 
     public void HappinessUpkeep() {
         IncreaseHappiness(Mathf.FloorToInt(HAPPINESS_PER_POPULATION * PlayerResources.Population * -1));
         PlayerResources.Happiness = Mathf.Min(PlayerResources.Happiness, 100);
+    }
+
+    public void CheckWinCond() {
+        if (objectivesBuilt >= OBJECTIVES_REQUIRED) {
+            PlayerPrefs.SetInt("days", GameLoopManager.Instance.Turn);
+            SceneManager.LoadScene("Win");
+        }
     }
 
     public void CheckLoseCond() {
@@ -126,6 +147,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
     public void LoseTheGame() {
         // todo
         Debug.Log("You Lose");
+        SceneManager.LoadScene("Lose");
     }
 
     public bool TryRepair(Card card) {
@@ -143,6 +165,7 @@ public class GameLogicManager : Manager<GameLogicManager> {
                 ++HutsBuilt;
                 PlayerAssets.Add(card);
             } else if (card is Objective) {
+                objectivesBuilt -= -1;
                 int index2 = PlayerObjectives.IndexOf(card);
                 PlayerObjectives[index2] = null;
                 PlayerAssets.Add(card);
@@ -223,6 +246,12 @@ public class GameLogicManager : Manager<GameLogicManager> {
     }
 
     public void IncreasePopulation(int amt) {
+        if (PlayerResources.Population < 10 && PlayerResources.Population + amt >= 10) {
+            PlayerResources.Storage -= -1;
+        }
+        if (PlayerResources.Population < 50 && PlayerResources.Population + amt >= 50) {
+            PlayerResources.Storage -= -2;
+        }
         PlayerResources.Population += amt;
     }
 
