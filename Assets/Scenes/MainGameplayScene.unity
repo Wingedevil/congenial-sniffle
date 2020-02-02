@@ -2768,10 +2768,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90a1eb7e390e14a4d9c9b2736a6e53ef, type: 2}
   - {fileID: 11400000, guid: 74fc210b0415fd846b346c5414e4567e, type: 2}
   ObjectiveCards:
-  - {fileID: 11400000, guid: 4487cae01d1350f4e8bdd6dcabdb8fb6, type: 2}
   - {fileID: 11400000, guid: c5b556a85a9857d49add40d35af4de5e, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 2725a7a4d517f6e419bfb6f2c9d5eb36, type: 2}
+  - {fileID: 11400000, guid: 4487cae01d1350f4e8bdd6dcabdb8fb6, type: 2}
+  - {fileID: 11400000, guid: d11ec1187b6f4304aa70830a2a64ec1e, type: 2}
 --- !u!1 &192781788
 GameObject:
   m_ObjectHideFlags: 0
