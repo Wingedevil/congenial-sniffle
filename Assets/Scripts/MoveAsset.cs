@@ -5,9 +5,21 @@ using UnityEngine.EventSystems;
 public class MoveAsset : MonoBehaviour, IPointerClickHandler
 {
     public bool MoveLeft = false;
+    SpriteRenderer spriteRenderer;
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    void Update()
+    {
+        if (MoveLeft)
+        {
+            spriteRenderer.enabled = UIManager.Instance.CurrentAssetIndex > 0;
+        }
+
+    }
     public void OnPointerClick(PointerEventData data)
     {
-        Debug.Log("here");
         var gm = GameLogicManager.Instance;
         var ui = UIManager.Instance;
         if (MoveLeft)
