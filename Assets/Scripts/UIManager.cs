@@ -29,6 +29,7 @@ public class UIManager : Manager<UIManager>
     public List<GameObject> AssetObjects;
     public GameObject RepairDrop;
     public GameObject TrashDrop;
+    public GameObject Line;
 
     public int CurrentAssetIndex = 0;
 
@@ -65,6 +66,9 @@ public class UIManager : Manager<UIManager>
             uiCard.UpdateCardData();
             ++i;
         }
+        Vector3 linePos = Line.transform.position;
+        linePos.x = 4 * Mathf.Max(GameLogicManager.Instance.PlayerResources.RiverSize - 3, 0);
+        Line.transform.position = linePos;
     }
 
     public void ToggleRepairDrop(bool toggle)
