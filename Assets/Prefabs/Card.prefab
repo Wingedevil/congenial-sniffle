@@ -1510,6 +1510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CardData: {fileID: 0}
+  NormalColor: {r: 0.54901963, g: 0.4156863, b: 0.25882354, a: 1}
+  UpgradedColor: {r: 0.088109665, g: 0.5660378, b: 0.088109665, a: 0}
   DefaultSprite: {fileID: 21300000, guid: 5ba7a8e7718b93a40a7725d37d3dafd9, type: 3}
   CardImage: {fileID: 8292001231957385940}
   RepairWoodCost: {fileID: 6856202257856992597}

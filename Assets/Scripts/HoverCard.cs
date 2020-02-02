@@ -22,14 +22,15 @@ public class HoverCard : MonoBehaviour
         CardImage.sprite = card.Image == null ? DefaultSprite : card.Image;
         Name.text = card.Name;
         Description.text = card.Description;
-        RepairWoodCost.text = card.RepairWoodCost.ToString();
-        RepairSteelCost.text = card.RepairSteelCost.ToString();
-        RepairGoldCost.text = card.RepairGoldCost.ToString();
+        var up = GameLogicManager.Instance.PlayerUpgrades;
+        RepairWoodCost.text = (card.RepairWoodCost + up.WoodCostReduction).ToString();
+        RepairSteelCost.text = (card.RepairSteelCost+ up.SteelCostReduction).ToString();
+        RepairGoldCost.text = (card.RepairGoldCost + up.GoldCostReduction).ToString();
         if (card.Scrappable)
         {
-            ScrapWoodCost.text = card.ScrapWoodCost.ToString();
-            ScrapSteelCost.text = card.ScrapSteelCost.ToString();
-            ScrapGoldCost.text = card.ScrapGoldCost.ToString();
+            ScrapWoodCost.text = (card.ScrapWoodCost + up.WoodScrapBonus).ToString();
+            ScrapSteelCost.text = (card.ScrapSteelCost + up.SteelScrapBonus).ToString();
+            ScrapGoldCost.text = (card.ScrapGoldCost + up.GoldScrapBonus).ToString();
         }
         else
         {

@@ -32,15 +32,16 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointe
         CardData.NotUnityUpdate();
         CardImage.sprite = CardData.Image == null ? DefaultSprite : CardData.Image;
         if (IsInAssets) return;
-        RepairWoodCost.text = CardData.RepairWoodCost.ToString();
-        RepairSteelCost.text = CardData.RepairSteelCost.ToString();
-        RepairGoldCost.text = CardData.RepairGoldCost.ToString();
+        var up = GameLogicManager.Instance.PlayerUpgrades;
+        RepairWoodCost.text = (CardData.RepairWoodCost + up.WoodCostReduction).ToString();
+        RepairSteelCost.text = (CardData.RepairSteelCost+ up.SteelCostReduction).ToString();
+        RepairGoldCost.text = (CardData.RepairGoldCost + up.GoldCostReduction).ToString();
         PopCost.text = CardData.PopulationRequirement > 0 ? CardData.PopulationRequirement.ToString() : "";
         if (CardData.Scrappable)
         {
-            ScrapWoodCost.text = CardData.ScrapWoodCost.ToString();
-            ScrapSteelCost.text = CardData.ScrapSteelCost.ToString();
-            ScrapGoldCost.text = CardData.ScrapGoldCost.ToString();
+            ScrapWoodCost.text = (CardData.ScrapWoodCost + up.WoodScrapBonus).ToString();
+            ScrapSteelCost.text = (CardData.ScrapSteelCost + up.SteelScrapBonus).ToString();
+            ScrapGoldCost.text = (CardData.ScrapGoldCost + up.GoldScrapBonus).ToString();
         }
         else
         {
