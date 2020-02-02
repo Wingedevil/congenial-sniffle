@@ -12,7 +12,7 @@ public abstract class Manager<T> : MonoBehaviour where T : MonoBehaviour
             if (null == _instance)
             {
                 _instance = value;
-                DontDestroyOnLoad(_instance.gameObject);
+                //DontDestroyOnLoad(_instance.gameObject);
             }
             else if (_instance != value)
             {
