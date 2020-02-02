@@ -66,9 +66,13 @@ public class UIManager : Manager<UIManager>
             uiCard.UpdateCardData();
             ++i;
         }
-        Vector3 linePos = Line.transform.position;
-        linePos.x = 3 * Mathf.Max(GameLogicManager.Instance.PlayerResources.RiverSize - 3, 0);
-        Line.transform.position = linePos;
+        if (IsRiverShown)
+        {
+            Vector3 linePos = Line.transform.position;
+            linePos.x = 3 * Mathf.Max(GameLogicManager.Instance.PlayerResources.RiverSize - 3, 0);
+            Line.transform.position = linePos;
+        }
+        Line.SetActive(IsRiverShown);
     }
 
     public void ToggleRepairDrop(bool toggle)
