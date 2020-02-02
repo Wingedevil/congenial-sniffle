@@ -5,22 +5,24 @@ using UnityEngine;
 public class DeckManager : Manager<DeckManager>
 {
     public const int TURNS_BEFORE_REAPPEAR = 3;
-    public int[] TIER_REQUIREMENTS = new []{0, 10, 20};
+    public int[] TIER_REQUIREMENTS;
     public Card[] JunkCards;
 
     public Card[] DeckOfCards;
 
     public List<Objective> ObjectiveCards;
 
+    // owned cards
+    private Hashtable deadCards = new Hashtable();
+
     // from downstreamed or scrapped
-    private List<Card> deadCards = new List<Card>();
     private Queue<List<Card>> forbiddenCards = new Queue<List<Card>>();
 
     public override void Awake() {
         base.Awake();
-        forbiddenCards.Enqueue(new List<Card>());
-        forbiddenCards.Enqueue(new List<Card>());
-        forbiddenCards.Enqueue(new List<Card>());
+        for (int i = 0; i < TURNS_BEFORE_REAPPEAR; ++i) {
+            forbiddenCards.Enqueue(new List<Card>());
+        }
     }
 
 
@@ -38,7 +40,7 @@ public class DeckManager : Manager<DeckManager>
         List<Card> river = GameLogicManager.Instance.PlayerRiver;
         int builtStuffs = GameLogicManager.Instance.PlayerAssets.Count;
         List<Card> finalDeck = new List<Card>();
-        foreach(Card c in DeckOfCards) {
+        foreach (Card c in DeckOfCards) {
             // no duplicates
             if (river.Contains(c)) {
                 continue;
@@ -48,20 +50,22 @@ public class DeckManager : Manager<DeckManager>
             if (builtStuffs < TIER_REQUIREMENTS[c.Tier]) {
                 continue;
             }
-            
-            // 3 turn cooldown
+
+            // turn cooldown
             foreach (List<Card> list in forbiddenCards) {
                 if (list.Contains(c)) {
-                    continue;
+                    goto end;
                 }
             }
 
-            // no more than 2
-            if (deadCards.Contains(c)) {
+            // no more than n cards
+            if ((int)(deadCards.ContainsKey(c.ID) ? deadCards[c.ID] : 0) >= c.Copies) {
                 continue;
             }
 
             finalDeck.Add(c);
+        end:
+            continue;
         }
         forbiddenCards.Dequeue();
         forbiddenCards.Enqueue(new List<Card>());
@@ -74,26 +78,23 @@ public class DeckManager : Manager<DeckManager>
     }
 
     public void DownStreamed(Card cd) {
-        List<Card> list = null;
         foreach (List<Card> inlist in forbiddenCards) {
-            list = inlist;
+            inlist.Add(cd);
         }
-
-        list.Add(cd);
     }
 
     public void Scrapped(Card cd) {
+        foreach (List<Card> inlist in forbiddenCards) {
+            inlist.Add(cd);
+        }
+    }
+
+    public void Repaired(Card cd) {
         List<Card> list = null;
         foreach (List<Card> inlist in forbiddenCards) {
             list = inlist;
         }
-
         list.Add(cd);
-    }
-
-    public void Repaired(Card cd) {
-        if (GameLogicManager.Instance.PlayerAssets.Contains(cd)) {
-            deadCards.Add(cd);
-        }
+        deadCards[cd.ID] = (int)(deadCards.ContainsKey(cd.ID) ? deadCards[cd.ID] : 0) + 1;
     }
 }

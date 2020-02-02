@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853900f274b82b844b509be528703496, type: 3}
+  m_Name: Treasury
+  m_EditorClassIdentifier: 
+  ID: 105
+  Tier: 0
+  Copies: 2
+  Name: Treasury
+  Image: {fileID: 0}
+  Description: +10 Storage
+  OnRepair: []
+  OnAction:
+  - {fileID: 11400000, guid: 783394bd37396884f8b5f5e567b656b0, type: 2}
+  OnEndTurn: []
+  ScrapWoodCost: 0
+  ScrapSteelCost: 0
+  ScrapGoldCost: 0
+  RepairWoodCost: 12
+  RepairSteelCost: 18
+  RepairGoldCost: 20
+  IsTapped: 0
+  Scrappable: 0

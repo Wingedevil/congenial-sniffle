@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853900f274b82b844b509be528703496, type: 3}
+  m_Name: Hospital
+  m_EditorClassIdentifier: 
+  ID: 101
+  Tier: 0
+  Copies: 2
+  Name: Hospital
+  Image: {fileID: 0}
+  Description: +1 Population/turn, +1Food/turn
+  OnRepair: []
+  OnAction: []
+  OnEndTurn:
+  - {fileID: 11400000, guid: c3bec3253b59a1045916ff93e27ba497, type: 2}
+  - {fileID: 11400000, guid: 046377c2b38e57d438aa3a4b600d51f7, type: 2}
+  ScrapWoodCost: 0
+  ScrapSteelCost: 0
+  ScrapGoldCost: 0
+  PopulationRequirement: 10
+  RepairWoodCost: 11
+  RepairSteelCost: 18
+  RepairGoldCost: 18
+  IsTapped: 0
+  Scrappable: 0

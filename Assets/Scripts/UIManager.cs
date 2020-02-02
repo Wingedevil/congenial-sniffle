@@ -78,6 +78,7 @@ public class UIManager : Manager<UIManager>
             Destroy(go);
         }
         AssetObjects.Clear();
+        float space = (RiverEnd.position.x - RiverStart.position.x) / 7.0f;
 
         int i = 0;
         foreach (Card card in GameLogicManager.Instance.PlayerAssets)
@@ -87,7 +88,7 @@ public class UIManager : Manager<UIManager>
                 ++i;
                 continue;
             }
-            GameObject go = GameObject.Instantiate(CardPrefab, StorageStart.position + Vector3.right * 1.8f * i, Quaternion.identity, transform);
+            GameObject go = GameObject.Instantiate(CardPrefab, StorageStart.position + Vector3.right * space * i, Quaternion.identity, transform);
             AssetObjects.Add(go);
             UICard uiCard = go.GetComponent<UICard>();
             uiCard.CardData = card;
@@ -104,7 +105,7 @@ public class UIManager : Manager<UIManager>
         SteelText.text = resources.Steel.ToString();
         GoldText.text = resources.Gold.ToString();
         TurnText.text = "Turn: " + GameLoopManager.Instance.Turn.ToString();
-        PopText.text = resources.Population.ToString();
+        PopText.text = (resources.Population - resources.PopulationAtWork).ToString() + "/" + resources.Population.ToString();
         HappyText.text = resources.Happiness.ToString();
         // ResourcesText.text = string.Format("W: {0}, S: {1}, G: {2}, Actions: {3}, River Size: {4}, Pop: {5}, Happy: {8} Turn: {6}, Click: {7}, Bottom Row: {9}",
         //     resources.Wood,

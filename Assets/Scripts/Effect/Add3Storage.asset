@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c79a14cc2476464291242cf40d5e99e, type: 3}
-  m_Name: Add10Happiness
+  m_Name: Add3Storage
   m_EditorClassIdentifier: 
   WoodCost: 0
   SteelCost: 0
@@ -20,6 +20,6 @@ MonoBehaviour:
   ChangeSteel: 0
   ChangeGold: 0
   ChangePopulation: 0
-  ChangeHappiness: 10
+  ChangeHappiness: 0
   ChangeRiverSize: 0
-  ChangeStorage: 0
+  ChangeStorage: 3

@@ -9,6 +9,7 @@ public class ChangeRiverEffect : Effect {
     public bool MoveRightToLeft;
     public int MoveRiverNTimes;
     public override void ApplyEffect() {
+        GameLogicManager.Instance.MoveRiver();
     }
 }
 
